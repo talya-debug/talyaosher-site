@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Manrope:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#6f797a",
+                    "on-secondary-container": "#795d08",
+                    "primary-container": "#006d77",
+                    "inverse-surface": "#2f312e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1b1c1a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#ffd87c",
+                    "surface-container-high": "#e9e8e4",
+                    "surface-bright": "#faf9f5",
+                    "outline-variant": "#bec8ca",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#634500",
+                    "surface-container": "#efeeea",
+                    "surface": "#faf9f5",
+                    "secondary-fixed": "#ffdf96",
+                    "on-tertiary-fixed": "#271900",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#004f56",
+                    "primary": "#00535b",
+                    "surface-variant": "#e3e2df",
+                    "secondary-fixed-dim": "#e7c268",
+                    "tertiary-container": "#825b00",
+                    "tertiary-fixed": "#ffdea9",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#9becf7",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#ffba27",
+                    "on-primary-fixed": "#001f23",
+                    "background": "#faf9f5",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f4f4f0",
+                    "surface-dim": "#dbdad6",
+                    "on-tertiary-container": "#ffd99b",
+                    "on-background": "#1b1c1a",
+                    "primary-fixed": "#9ff0fb",
+                    "inverse-primary": "#82d3de",
+                    "secondary": "#765a05",
+                    "surface-tint": "#006972",
+                    "on-tertiary-fixed-variant": "#5e4100",
+                    "surface-container-highest": "#e3e2df",
+                    "inverse-on-surface": "#f2f1ed",
+                    "on-secondary-fixed": "#251a00",
+                    "primary-fixed-dim": "#82d3de",
+                    "on-surface-variant": "#3e494a",
+                    "on-secondary-fixed-variant": "#5a4400"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-padding": "120px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "headline-lg": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "label-caps": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #faf9f5;
+            color: #1b1c1a;
+        }
+        .editorial-divider {
+            height: 1px;
+            background: linear-gradient(to left, #006D77, transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_-10px_rgba(0,109,119,0.1)]">
+<nav class="flex flex-row-reverse justify-between items-center px-6 md:px-16 py-5 w-full">
+<div>
+                <img src="logo.png" alt="טליה אושר — בונים תשתיות לעסקים" style="height: 80px;" />
+            </div>
+<div class="hidden md:flex flex-row-reverse gap-8 items-center">
+<a class="text-[#006D77] dark:text-[#4DB6AC] border-b-2 border-[#006D77] pb-1 font-semibold transition-all duration-300 ease-in-out hover:opacity-80 font-['Noto_Serif']" href="#home">דף הבית</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#006D77] transition-all duration-300 ease-in-out hover:opacity-80 font-['Noto_Serif']" href="#services">שירותים</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#006D77] transition-all duration-300 ease-in-out hover:opacity-80 font-['Noto_Serif']" href="#about">אודות</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#006D77] transition-all duration-300 ease-in-out hover:opacity-80 font-['Noto_Serif']" href="#process">תהליך</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#006D77] transition-all duration-300 ease-in-out hover:opacity-80 font-['Noto_Serif']" href="#contact">צור קשר</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:opacity-90 active:scale-95">
+                קביעת פגישה
+            </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-6 md:px-16 max-w-[1280px] mx-auto flex flex-col md:flex-row-reverse items-center gap-12" id="home">
+<div class="w-full md:w-1/2 space-y-8">
+<span class="text-label-caps font-label-caps text-secondary tracking-widest">בונים תשתיות לעסקים</span>
+<h1 class="text-display-lg font-display-lg text-primary leading-tight">
+                הופכים חזון עסקי<br/>למציאות רווחית.
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                יועצת עסקית שלא רק אומרת מה לעשות — אלא נכנסת, מבינה, ובונה את הפתרון. מערכות ניהול, כלי תמחור, תהליכי עבודה — מוצר מוגמר, לא מסמך.
+            </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full text-body-md font-semibold hover:opacity-90 transition-all">בואו נדבר</button>
+<button class="border-2 border-primary text-primary px-10 py-4 rounded-full text-body-md font-semibold hover:bg-primary/5 transition-all">לשירותים שלנו</button>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="relative">
+<div class="absolute -top-4 -right-4 w-full h-full border-2 border-secondary-container rounded-xl -z-10"></div>
+<img class="w-full h-[600px] object-cover rounded-xl shadow-lg" alt="טליה אושר — יועצת עסקית" src="talya-photo.jpg"/>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 bg-surface-container-low px-6 md:px-16" id="process">
+<div class="max-w-[1280px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-4">איך זה עובד?</h2>
+<div class="w-24 h-1 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="bg-white p-10 rounded-xl shadow-sm text-center space-y-4 hover:shadow-md transition-shadow">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto text-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="login">login</span>
+</div>
+<h3 class="text-headline-md font-headline-md">אנחנו נכנסים לעסק</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">ניתוח מעמיק של המצב הקיים, איתור צווארי בקבוק והזדמנויות לצמיחה.</p>
+</div>
+<div class="bg-white p-10 rounded-xl shadow-sm text-center space-y-4 hover:shadow-md transition-shadow">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto text-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="architecture">architecture</span>
+</div>
+<h3 class="text-headline-md font-headline-md">אנחנו בונים תהליך</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">תכנון אסטרטגי ובניית תשתיות מותאמות אישית לצרכים הייחודיים שלכם.</p>
+</div>
+<div class="bg-white p-10 rounded-xl shadow-sm text-center space-y-4 hover:shadow-md transition-shadow">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto text-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="inventory_2">inventory_2</span>
+</div>
+<h3 class="text-headline-md font-headline-md">אתם מקבלים מוצר</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">מערכת עבודה משומנת, ברורה ויעילה שמאפשרת לכם להתמקד בעיקר.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Who Is This For -->
+<section class="py-24 px-6 md:px-16 max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="text-label-caps font-label-caps text-secondary">קהלי יעד</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-2">המומחיות שלנו, ההצלחה שלכם</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group relative overflow-hidden rounded-xl h-[450px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="construction site with engineers reviewing blueprints in sunlight, professional atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYkLy_WhKrdN4jVNnLHoBceuXU8ugdORqy1OdtDp_9UO6gauVAja4qy3tTHsyM6wRQFIZa2LvEig44a13_zybSirybRuMiGZBru-otC3FRM5u3-Cc8WpQBuEU_5dYgh_x7epepDiNSJFh4Z6yLb0cLOr2VIGy9mPiwzeHfrEGO5iQw7hL2bvac0Dh-utRLt_gNyYZsVmOdwUhNXTS4fM8SISUO10q4aJITFLZjg_salZmhs4YoDjeLr--BhTL1T_8fhfaS-Y55YQ7P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<h3 class="text-headline-md font-headline-md mb-2">קבלנים</h3>
+<p class="text-body-md font-body-md opacity-90">ניהול פרויקטים, בקרת תקציב וייעול לוחות זמנים בשטח.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl h-[450px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="modern minimalist interior design studio with mood boards and samples, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuWPWngTrI7rd_8yc41l4s1pVAz4BlCDk5qrn0y1_k9hqoqE9txUGhOP1onWDV5bUDJREmxnpabgGvojnpnR8gYlYFTBnwBcfc2GT_F8bEdXxIltVGLHmVO_3noOSZDtcMUVVM4rcZRAWV2fBjEr42Fq2N14of2QtzOhfgcf_3eJ8C4TR59iyiqLbSF-AnTYg0xbaDQlHwpKrKbKdxS1hsBv_UGO3H_ujZbYVJyPjHDIUa6fmVSbX-JLDDfaNz3unAXyejSwBRybjO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<h3 class="text-headline-md font-headline-md mb-2">מעצבי פנים</h3>
+<p class="text-body-md font-body-md opacity-90">בניית תהליכי עבודה מול לקוחות וספקים, וניהול סטודיו רווחי.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl h-[450px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="clean bright shared office space with plants and professional vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAghA1MedTapaUZRoGVyN6nA4UC4OZEmXCQcTR32aNXu_tDz8lhgnflnwynbBN45t2lXrGABnraRNEzdO7eUA_Ee4XDPEWx5DFgljEMoVXmQIBkLolULmr29ZuVioadvWUzhoybCQwU5xCFWeZpirF_lA-TkRqDAc2KF_jcqFWmwxwIgKhMyOpLqyDRfIxgJfoMa54NlXWNIQUBkjzXVljayEOyO55xd7s5bLura2MsoOHQgiHOMStvKF540vMH-02nwRND7NkolqwH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<h3 class="text-headline-md font-headline-md mb-2">עסקים קטנים</h3>
+<p class="text-body-md font-body-md opacity-90">יצירת תשתיות ניהוליות וארגוניות לצמיחה מאוזנת ובת קיימא.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio -->
+<section class="py-24 bg-white px-6 md:px-16 overflow-hidden">
+<div class="max-w-[1280px] mx-auto">
+<div class="text-center mb-16">
+<span class="text-label-caps font-label-caps text-secondary">תיק עבודות</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mt-2">פרויקטים נבחרים</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 - קבלן ביצוע -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<img class="w-full h-64 object-cover object-top" src="project-projects.png" alt="מערכת ניהול לקבלן ביצוע"/>
+<div class="p-6">
+<span class="text-label-caps font-label-caps text-secondary">קבלן ביצוע</span>
+<h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ניהול פרויקטים</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">קבלן שניהל הכל בראש ובוואטסאפ. קיבל מערכת שמנהלת את כל מחזור החיים — מהליד ועד הגבייה: הצעות מחיר ממחירון דיגיטלי, גבייה לפי אבני דרך, הרשאות לפי תפקיד, ודשבורד בזמן אמת.</p>
+</div>
+</div>
+<!-- Project 2 - מעצבת פנים -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<img class="w-full h-64 object-cover object-top" src="project-yael-dashboard.png" alt="מערכת ניהול לסטודיו עיצוב פנים"/>
+<div class="p-6">
+<span class="text-label-caps font-label-caps text-secondary">עיצוב פנים</span>
+<h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ניהול לסטודיו עיצוב</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">מעצבת שעבדה עם אקסלים ודפים ביד. קיבלה מערכת עם תבניות תכולה מוכנות, דדליינים אוטומטיים, טיימליין ויזואלי, ריכוז כלל הפרויקטים וגבייה מלקוחות וספקים.</p>
+</div>
+</div>
+<!-- Project 3 - כלי תמחור -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<img class="w-full h-64 object-cover object-top" src="project-uri.png" alt="כלי תמחור לבעל מקצוע"/>
+<div class="p-6">
+<span class="text-label-caps font-label-caps text-secondary">בעל מקצוע • עבודות עץ</span>
+<h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">כלי תמחור מותאם אישית</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">בעל מקצוע שתמחר "מהבטן" ולא ידע אם הוא מרוויח. קיבל מחשבון תמחור דינמי, כתבי כמויות אוטומטיים, תבנית הצעת מחיר ממותגת ותהליך מכירה מסודר.</p>
+</div>
+</div>
+<!-- Project 4 - ניהול מיילים -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<img class="w-full h-64 object-cover object-top" src="project-wasim.png" alt="מערכת ניהול מיילים"/>
+<div class="p-6">
+<span class="text-label-caps font-label-caps text-secondary">חברת תשתיות • 11 עובדים</span>
+<h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ריכוז מיילים ומשימות</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">חברה עם 11 עובדים שטבעו בכאוס של מיילים. קיבלו מערכת שמרכזת מיילים מ-Microsoft 365, משייכת לפרויקטים, עם תצוגה מותאמת לכל תפקיד וסדרי עדיפויות.</p>
+</div>
+</div>
+<!-- Project 5 - קריאות שירות -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<img class="w-full h-64 object-cover object-top" src="project-tickets-combined.png" alt="מערכת קריאות שירות"/>
+<div class="p-6">
+<span class="text-label-caps font-label-caps text-secondary">שירות לקוחות</span>
+<h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת קריאות שירות</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">במקום וואטסאפ ומיילים — טופס פשוט ללקוח ולוח בקרה מסודר למנהל. סינון לפי סוג, סטטוסים, עדיפויות והודעות מייל אוטומטיות.</p>
+</div>
+</div>
+<!-- Project 6 - ניהול הזמנות תכשיטים -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<img class="w-full h-64 object-cover object-top" src="project-lia-v3.png" alt="מערכת ניהול הזמנות"/>
+<div class="p-6">
+<span class="text-label-caps font-label-caps text-secondary">תכשיטים</span>
+<h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ניהול הזמנות וקטלוג</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">עסק תכשיטי זהב עם מאות פריטים ובלי סדר. קיבלה קטלוג דיגיטלי של 800+ פריטים, תמחור אוטומטי לפי מחיר זהב בזמן אמת, ומערכת ניהול הזמנות ומלאי.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-primary text-white px-6 md:px-16">
+<div class="max-w-[1280px] mx-auto">
+<h2 class="text-headline-lg font-headline-lg mb-16 text-center">מה אומרים עלינו?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="space-y-4">
+<video class="aspect-video rounded-xl w-full" controls preload="metadata">
+<source src="video1.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="space-y-4">
+<video class="aspect-video rounded-xl w-full" controls preload="metadata">
+<source src="video2.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="space-y-4">
+<video class="aspect-video rounded-xl w-full" controls preload="metadata">
+<source src="video3.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="space-y-4">
+<video class="aspect-video rounded-xl w-full" controls preload="metadata">
+<source src="video4.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me -->
+<section class="py-24 px-6 md:px-16 max-w-[1280px] mx-auto flex flex-col md:flex-row gap-16 items-center" id="about">
+<div class="w-full md:w-2/3 space-y-6 mx-auto">
+<span class="text-label-caps font-label-caps text-secondary">נעים להכיר</span>
+<h2 class="text-headline-lg font-headline-lg text-primary">טליה אושר</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                אני נכנסת לעסק, מבינה מה באמת צריך, ובונה את זה. לא מסמך המלצות — מוצר מוגמר. מערכת ניהול, כלי תמחור, תהליך עבודה שלם. הלקוחות שלי הם קבלנים, מעצבות פנים ובעלי עסקים קטנים שצריכים מישהי שמבינה את השטח ויודעת לתרגם את זה לכלים שעובדים.
+            </p>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                אני לא מאמינה בייעוץ שנגמר בשיחה. אני מאמינה בתוצאות — במערכת שעובדת, בתהליך שחוסך זמן וכסף, ובבעל עסק שסוף סוף יודע בדיוק מה קורה אצלו.
+            </p>
+<div class="pt-6">
+<img class="h-16 opacity-80" data-alt="simple elegant handwritten signature in dark teal ink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIItztkGNTPH6kYfHYxuSsjbTjahLyE8iGZmUGDds1lj4t2cRMJapV4HIVenmCfz9pl7xuiJGEUR7MLNsA8G4bGlzOqo3kFjQrI6nQtilQO0GPdsOE5wPtDBkFJzz5EcjZcn3qTn0oJb4WpKwE5kHBaTzA7LKXo3Kob7Ph9y6fDkWheX7kQb4hSREM7ycJcXN8brIhXNmCsPIS9Hh2RtH16U5WFz6U-BK73iTlKh6QBuf_Y7fh4ZeV5ATP49X3ExQJoIRrCAZ8cauD"/>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-surface-container-high px-6 md:px-16" id="contact">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="space-y-8">
+<h2 class="text-headline-lg font-headline-lg text-primary">בואו נבנה משהו גדול ביחד</h2>
+<p class="text-body-lg text-on-surface-variant">השאירו פרטים ונחזור אליכם בהקדם לתיאום פגישת היכרות ללא התחייבות.</p>
+<div class="space-y-4">
+<a class="flex items-center gap-4 text-primary hover:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined bg-white p-3 rounded-full shadow-sm" data-icon="call">call</span>
+<span class="text-body-lg dir-ltr">054-4407557</span>
+</a>
+<a class="flex items-center gap-4 text-primary hover:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined bg-white p-3 rounded-full shadow-sm" data-icon="mail">mail</span>
+<span class="text-body-lg">Talya@talyaosher.com</span>
+</a>
+<a class="flex items-center gap-4 text-[#25D366] hover:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined bg-white p-3 rounded-full shadow-sm" data-icon="chat">chat</span>
+<span class="text-body-lg font-bold">ווטסאפ מהיר</span>
+</a>
+</div>
+</div>
+<div class="bg-white p-10 rounded-2xl shadow-xl">
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant">שם מלא</label>
+<input class="w-full border-0 border-b border-outline p-3 focus:ring-0 focus:border-primary bg-transparent" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant">טלפון</label>
+<input class="w-full border-0 border-b border-outline p-3 focus:ring-0 focus:border-primary bg-transparent" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant">הודעה</label>
+<textarea class="w-full border-0 border-b border-outline p-3 focus:ring-0 focus:border-primary bg-transparent" rows="4"></textarea>
+</div>
+<button class="w-full bg-secondary text-primary font-bold py-4 rounded-xl hover:opacity-90 transition-all text-body-lg">שלחו הודעה</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#006D77] dark:bg-slate-900 w-full py-12 px-6 md:px-16 border-t border-white/10">
+<div class="flex flex-col md:flex-row-reverse justify-between items-center gap-6 max-w-[1280px] mx-auto">
+<div class="text-xl font-light tracking-widest text-[#E9C46A] font-['Noto_Serif']">
+                טליה אושר
+            </div>
+<div class="flex gap-8 items-center font-['Noto_Serif'] text-sm">
+<a class="text-white/70 hover:text-[#E9C46A] transition-colors duration-200" href="#">לינקדאין</a>
+<a class="text-white/70 hover:text-[#E9C46A] transition-colors duration-200" href="#">תנאי שימוש</a>
+<a class="text-white/70 hover:text-[#E9C46A] transition-colors duration-200" href="#">מדיניות פרטיות</a>
+</div>
+<div class="text-white/70 font-['Noto_Serif'] text-sm">
+                © 2026 טליה אושר. כל הזכויות שמורות.
+            </div>
+</div>
+</footer>
+</body></html>
