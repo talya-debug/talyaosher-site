@@ -1,0 +1,16 @@
+רישום Google Search Console — הנחיות לטליה
+=============================================
+
+1. נכנסת ל: https://search.google.com/search-console
+2. לוחצת "התחלה" (Start)
+3. בצד שמאל בוחרת "Domain" ומזינה: talyaosher.com
+4. גוגל יבקש אימות — בוחרת "DNS verification"
+5. מעתיקה את קוד ה-TXT שגוגל נותן
+6. נכנסת ל-Namecheap → Advanced DNS → Add New Record:
+   - Type: TXT Record
+   - Host: @
+   - Value: [הקוד שגוגל נתן]
+7. חוזרת לגוגל ולוחצת "Verify"
+8. אחרי אימות — לוחצת "Sitemaps" בצד ולמזינה: sitemap.xml
+
+זהו! גוגל יתחיל לסרוק את האתר.
