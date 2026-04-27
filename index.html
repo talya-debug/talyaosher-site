@@ -290,7 +290,7 @@
 </div>
 </section>
 <!-- Portfolio -->
-<section class="py-24 bg-white px-6 md:px-16 overflow-hidden">
+<section class="py-24 bg-white px-6 md:px-16 overflow-hidden" id="portfolio">
 <div class="max-w-[1280px] mx-auto">
 <div class="text-center mb-16">
 <span class="text-label-caps font-label-caps text-secondary">תיק עבודות</span>
@@ -298,62 +298,105 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Project 1 - קבלן ביצוע -->
-<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all cursor-pointer" onclick="openModal('project-contractor.png','מערכת ניהול פרויקטים','קבלן ביצוע','קבלן שניהל הכל בראש ובוואטסאפ. קיבל מערכת שמנהלת את כל מחזור החיים — מהליד ועד הגבייה: הצעות מחיר ממחירון דיגיטלי, גבייה לפי אבני דרך, הרשאות לפי תפקיד, ודשבורד בזמן אמת.')">
 <img class="w-full h-64 object-cover object-top" loading="lazy" src="project-contractor.png" alt="מערכת ניהול לקבלן ביצוע"/>
 <div class="p-6">
 <span class="text-label-caps font-label-caps text-secondary">קבלן ביצוע</span>
 <h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ניהול פרויקטים</h4>
-<p class="text-body-md font-body-md text-on-surface-variant">קבלן שניהל הכל בראש ובוואטסאפ. קיבל מערכת שמנהלת את כל מחזור החיים — מהליד ועד הגבייה: הצעות מחיר ממחירון דיגיטלי, גבייה לפי אבני דרך, הרשאות לפי תפקיד, ודשבורד בזמן אמת.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">קבלן שניהל הכל בראש ובוואטסאפ. קיבל מערכת שמנהלת את כל מחזור החיים — מהליד ועד הגבייה.</p>
+<span class="inline-block mt-4 text-[#006D77] font-semibold text-sm">← לחץ לפרטים נוספים</span>
 </div>
 </div>
 <!-- Project 2 - מעצבת פנים -->
-<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all cursor-pointer" onclick="openModal('project-yael-dashboard.png','מערכת ניהול לסטודיו עיצוב','עיצוב פנים','מעצבת שעבדה עם אקסלים ודפים ביד. קיבלה מערכת עם תבניות תכולה מוכנות, דדליינים אוטומטיים, טיימליין ויזואלי, ריכוז כלל הפרויקטים וגבייה מלקוחות וספקים.')">
 <img class="w-full h-64 object-cover object-top" loading="lazy" src="project-yael-dashboard.png" alt="מערכת ניהול לסטודיו עיצוב פנים"/>
 <div class="p-6">
 <span class="text-label-caps font-label-caps text-secondary">עיצוב פנים</span>
 <h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ניהול לסטודיו עיצוב</h4>
-<p class="text-body-md font-body-md text-on-surface-variant">מעצבת שעבדה עם אקסלים ודפים ביד. קיבלה מערכת עם תבניות תכולה מוכנות, דדליינים אוטומטיים, טיימליין ויזואלי, ריכוז כלל הפרויקטים וגבייה מלקוחות וספקים.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">מעצבת שעבדה עם אקסלים ודפים ביד. קיבלה מערכת עם תבניות תכולה מוכנות, טיימליין ויזואלי וגבייה.</p>
+<span class="inline-block mt-4 text-[#006D77] font-semibold text-sm">← לחץ לפרטים נוספים</span>
 </div>
 </div>
 <!-- Project 3 - כלי תמחור -->
-<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all cursor-pointer" onclick="openModal('project-uri.png','כלי תמחור מותאם אישית','בעל מקצוע • עבודות עץ','בעל מקצוע שתמחר &quot;מהבטן&quot; ולא ידע אם הוא מרוויח. קיבל מחשבון תמחור דינמי, כתבי כמויות אוטומטיים, תבנית הצעת מחיר ממותגת ותהליך מכירה מסודר.')">
 <img class="w-full h-64 object-cover object-top" loading="lazy" src="project-uri.png" alt="כלי תמחור לבעל מקצוע"/>
 <div class="p-6">
 <span class="text-label-caps font-label-caps text-secondary">בעל מקצוע • עבודות עץ</span>
 <h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">כלי תמחור מותאם אישית</h4>
-<p class="text-body-md font-body-md text-on-surface-variant">בעל מקצוע שתמחר "מהבטן" ולא ידע אם הוא מרוויח. קיבל מחשבון תמחור דינמי, כתבי כמויות אוטומטיים, תבנית הצעת מחיר ממותגת ותהליך מכירה מסודר.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">בעל מקצוע שתמחר "מהבטן". קיבל מחשבון תמחור דינמי, כתבי כמויות אוטומטיים ותבנית הצעת מחיר ממותגת.</p>
+<span class="inline-block mt-4 text-[#006D77] font-semibold text-sm">← לחץ לפרטים נוספים</span>
 </div>
 </div>
 <!-- Project 4 - ניהול מיילים -->
-<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all cursor-pointer" onclick="openModal('project-wasim.png','מערכת ריכוז מיילים ומשימות','חברת תשתיות','חברה עם 11 עובדים שטבעו בכאוס של מיילים. קיבלו מערכת שמרכזת מיילים מ-Microsoft 365, משייכת לפרויקטים, עם תצוגה מותאמת לכל תפקיד וסדרי עדיפויות.')">
 <img class="w-full h-64 object-cover object-top" loading="lazy" src="project-wasim.png" alt="מערכת ניהול מיילים"/>
 <div class="p-6">
 <span class="text-label-caps font-label-caps text-secondary">חברת תשתיות</span>
 <h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ריכוז מיילים ומשימות</h4>
-<p class="text-body-md font-body-md text-on-surface-variant">חברה עם 11 עובדים שטבעו בכאוס של מיילים. קיבלו מערכת שמרכזת מיילים מ-Microsoft 365, משייכת לפרויקטים, עם תצוגה מותאמת לכל תפקיד וסדרי עדיפויות.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">חברה עם 11 עובדים שטבעו בכאוס של מיילים. קיבלו מערכת מרכזת עם תצוגה מותאמת לכל תפקיד.</p>
+<span class="inline-block mt-4 text-[#006D77] font-semibold text-sm">← לחץ לפרטים נוספים</span>
 </div>
 </div>
 <!-- Project 5 - קריאות שירות -->
-<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all cursor-pointer" onclick="openModal('project-tickets-combined.png','מערכת קריאות שירות','שירות לקוחות','במקום וואטסאפ ומיילים — טופס פשוט ללקוח ולוח בקרה מסודר למנהל. סינון לפי סוג, סטטוסים, עדיפויות והודעות מייל אוטומטיות.')">
 <img class="w-full h-64 object-cover object-top" loading="lazy" src="project-tickets-combined.png" alt="מערכת קריאות שירות"/>
 <div class="p-6">
 <span class="text-label-caps font-label-caps text-secondary">שירות לקוחות</span>
 <h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת קריאות שירות</h4>
-<p class="text-body-md font-body-md text-on-surface-variant">במקום וואטסאפ ומיילים — טופס פשוט ללקוח ולוח בקרה מסודר למנהל. סינון לפי סוג, סטטוסים, עדיפויות והודעות מייל אוטומטיות.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">במקום וואטסאפ ומיילים — טופס פשוט ללקוח ולוח בקרה מסודר עם סטטוסים ומיילים אוטומטיים.</p>
+<span class="inline-block mt-4 text-[#006D77] font-semibold text-sm">← לחץ לפרטים נוספים</span>
 </div>
 </div>
 <!-- Project 6 - ניהול הזמנות תכשיטים -->
-<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all">
+<div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant hover:shadow-xl transition-all cursor-pointer" onclick="openModal('project-lia.png','מערכת ניהול הזמנות וקטלוג','תכשיטים','עסק תכשיטי זהב עם מאות פריטים ובלי סדר. קיבלה קטלוג דיגיטלי של 800+ פריטים, תמחור אוטומטי לפי מחיר זהב בזמן אמת, ומערכת ניהול הזמנות ומלאי.')">
 <img class="w-full h-64 object-cover object-top" loading="lazy" src="project-lia.png" alt="מערכת ניהול הזמנות"/>
 <div class="p-6">
 <span class="text-label-caps font-label-caps text-secondary">תכשיטים</span>
 <h4 class="text-headline-md font-headline-md text-primary mb-2 mt-2">מערכת ניהול הזמנות וקטלוג</h4>
-<p class="text-body-md font-body-md text-on-surface-variant">עסק תכשיטי זהב עם מאות פריטים ובלי סדר. קיבלה קטלוג דיגיטלי של 800+ פריטים, תמחור אוטומטי לפי מחיר זהב בזמן אמת, ומערכת ניהול הזמנות ומלאי.</p>
+<p class="text-body-md font-body-md text-on-surface-variant">קטלוג דיגיטלי של 800+ פריטים, תמחור אוטומטי לפי מחיר זהב בזמן אמת ומערכת ניהול הזמנות ומלאי.</p>
+<span class="inline-block mt-4 text-[#006D77] font-semibold text-sm">← לחץ לפרטים נוספים</span>
 </div>
 </div>
 </div>
 </div>
 </section>
+
+<!-- Modal -->
+<div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center" onclick="closeModal(event)">
+  <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+  <div class="relative bg-white rounded-2xl shadow-2xl max-w-3xl w-full mx-4 overflow-hidden" onclick="event.stopPropagation()">
+    <button onclick="closeModal()" class="absolute top-4 left-4 z-10 bg-white/90 rounded-full w-10 h-10 flex items-center justify-center text-2xl text-slate-600 hover:bg-slate-100 transition">✕</button>
+    <img id="modal-img" src="" alt="" class="w-full max-h-[60vh] object-cover object-top"/>
+    <div class="p-8">
+      <span id="modal-tag" class="text-label-caps font-label-caps text-secondary"></span>
+      <h3 id="modal-title" class="text-headline-md font-headline-md text-primary mt-2 mb-4"></h3>
+      <p id="modal-desc" class="text-body-lg text-on-surface-variant leading-relaxed"></p>
+      <a href="#contact" onclick="closeModal()" class="inline-block mt-6 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition">רוצה משהו דומה? דברו איתי</a>
+    </div>
+  </div>
+</div>
+<script>
+function openModal(img, title, tag, desc) {
+  document.getElementById('modal-img').src = img;
+  document.getElementById('modal-img').alt = title;
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-tag').textContent = tag;
+  document.getElementById('modal-desc').innerHTML = desc;
+  const m = document.getElementById('project-modal');
+  m.classList.remove('hidden');
+  m.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('project-modal')) return;
+  const m = document.getElementById('project-modal');
+  m.classList.add('hidden');
+  m.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+// סגירה בESC
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { const m = document.getElementById('project-modal'); m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow = ''; }});
+</script>
 <!-- Testimonials -->
 <section class="py-24 bg-primary text-white px-6 md:px-16">
 <div class="max-w-[1280px] mx-auto">
@@ -406,18 +449,36 @@
 </section>
 
 <!-- About Me -->
-<section class="py-24 px-6 md:px-16 max-w-[1280px] mx-auto flex flex-col md:flex-row gap-16 items-center" id="about">
-<div class="w-full md:w-2/3 space-y-6 mx-auto">
-<span class="text-label-caps font-label-caps text-secondary">נעים להכיר</span>
-<h2 class="text-headline-lg font-headline-lg text-primary">טליה אושר</h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
-                אני נכנסת לעסק, מבינה מה באמת צריך, ובונה את זה. לא מסמך המלצות — מוצר מוגמר. מערכת ניהול, כלי תמחור, תהליך עבודה שלם. הלקוחות שלי הם קבלנים, מעצבות פנים ובעלי עסקים קטנים שצריכים מישהי שמבינה את השטח ויודעת לתרגם את זה לכלים שעובדים.
-            </p>
-<p class="text-body-lg font-body-lg text-on-surface-variant">
-                אני לא מאמינה בייעוץ שנגמר בשיחה. אני מאמינה בתוצאות — במערכת שעובדת, בתהליך שחוסך זמן וכסף, ובבעל עסק שסוף סוף יודע בדיוק מה קורה אצלו.
-            </p>
-<div class="pt-6">
-<img class="h-16 opacity-80" alt="חתימה של טליה אושר" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIItztkGNTPH6kYfHYxuSsjbTjahLyE8iGZmUGDds1lj4t2cRMJapV4HIVenmCfz9pl7xuiJGEUR7MLNsA8G4bGlzOqo3kFjQrI6nQtilQO0GPdsOE5wPtDBkFJzz5EcjZcn3qTn0oJb4WpKwE5kHBaTzA7LKXo3Kob7Ph9y6fDkWheX7kQb4hSREM7ycJcXN8brIhXNmCsPIS9Hh2RtH16U5WFz6U-BK73iTlKh6QBuf_Y7fh4ZeV5ATP49X3ExQJoIRrCAZ8cauD"/>
+<section class="py-24 px-6 md:px-16 bg-[#00535b]" id="about">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/3 flex-shrink-0">
+  <img class="w-full max-w-[340px] mx-auto object-cover rounded-2xl shadow-2xl" alt="טליה אושר — יועצת עסקית" src="talya-photo.jpg"/>
+</div>
+<div class="w-full md:w-2/3 space-y-6">
+  <span class="text-label-caps font-label-caps text-[#E9C46A] tracking-widest">נעים להכיר</span>
+  <h2 class="text-headline-lg font-headline-lg text-white">טליה אושר</h2>
+  <p class="text-body-lg font-body-lg text-white/80 leading-relaxed">
+    אני נכנסת לעסק, מבינה מה באמת צריך, ובונה את זה. לא מסמך המלצות — מוצר מוגמר. מערכת ניהול, כלי תמחור, תהליך עבודה שלם. הלקוחות שלי הם קבלנים, מעצבות פנים ובעלי עסקים קטנים שצריכים מישהי שמבינה את השטח ויודעת לתרגם את זה לכלים שעובדים.
+  </p>
+  <p class="text-body-lg font-body-lg text-white/80">
+    אני לא מאמינה בייעוץ שנגמר בשיחה. אני מאמינה בתוצאות — במערכת שעובדת, בתהליך שחוסך זמן וכסף, ובבעל עסק שסוף סוף יודע בדיוק מה קורה אצלו.
+  </p>
+  <div class="pt-4 flex gap-6">
+    <div class="text-center">
+      <div class="text-3xl font-bold text-[#E9C46A]">6+</div>
+      <div class="text-white/70 text-sm mt-1">פרויקטים</div>
+    </div>
+    <div class="w-px bg-white/20"></div>
+    <div class="text-center">
+      <div class="text-3xl font-bold text-[#E9C46A]">3</div>
+      <div class="text-white/70 text-sm mt-1">תחומי התמחות</div>
+    </div>
+    <div class="w-px bg-white/20"></div>
+    <div class="text-center">
+      <div class="text-3xl font-bold text-[#E9C46A]">100%</div>
+      <div class="text-white/70 text-sm mt-1">מוצר מוגמר</div>
+    </div>
+  </div>
 </div>
 </div>
 </section>
