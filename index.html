@@ -133,6 +133,10 @@
   <symbol id="i-send" viewBox="0 0 24 24"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
   <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M4 8h16"/><path d="M12 8v6"/><path d="m8 21 4-7 4 7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
 </svg>
 
@@ -375,10 +379,6 @@
       <div>
         <h2 class="t-h2">העסק שלך גדל. הדרך שבה הוא עובד צריכה לגדול איתו.</h2>
         <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg mt-8">ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך<span class="sr-only"> (נפתח בוואטסאפ)</span></a>
-        <div class="mt-8 space-y-1 text-white/80">
-          <p>טלפון: <a class="text-white font-medium hover:underline" href="tel:0544407557" dir="ltr">054-4407557</a></p>
-          <p>מייל: <a class="text-white font-medium hover:underline" href="mailto:Talya@talyaosher.com">Talya@talyaosher.com</a></p>
-        </div>
       </div>
       <div class="bg-white text-ink p-7 md:p-9 rounded-3xl">
         <h3 class="display text-2xl text-primary">קביעת שיחה</h3>
@@ -424,29 +424,41 @@
 
 </main>
 
-<!-- פוטר + קישורים למאמרים (חשוב לגוגל) -->
-<footer class="bg-deep text-white/75 py-10 px-5 md:px-10">
+<!-- פוטר -->
+<footer class="bg-deep text-white/75 pt-12 pb-8 px-5 md:px-10">
   <div class="max-w-[1200px] mx-auto">
-    <nav aria-label="מאמרים" class="flex flex-wrap gap-x-6 gap-y-2 text-[.95rem]">
-      <span class="text-white font-bold">מאמרים:</span>
-      <a class="hover:text-sun inline-block py-1.5" href="blog-pricing.html">תמחור לקבלנים</a>
-      <a class="hover:text-sun inline-block py-1.5" href="blog-milestone-payments.html">גבייה לפי אבני דרך</a>
-      <a class="hover:text-sun inline-block py-1.5" href="blog-contractor-quote.html">הצעת מחיר לקבלן</a>
-      <a class="hover:text-sun inline-block py-1.5" href="blog-interior-design-management.html">ניהול משרד עיצוב פנים</a>
-      <a class="hover:text-sun inline-block py-1.5" href="blog-consulting-vs-coaching.html">ייעוץ עסקי מול קואצ'ינג</a>
-      <a class="hover:text-sun inline-block py-1.5" href="blog-management-system-signs.html">5 סימנים שהעסק צריך סדר</a>
-      <a class="hover:text-sun inline-block py-1.5" href="blog-crm-small-business.html">CRM לעסק קטן</a>
+    <!-- כל דרכי הקשר בשורה אחת -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <img src="logo-white.png" alt="טליה אושר" class="h-14 w-auto"/>
+      <ul class="flex flex-wrap justify-center gap-3" aria-label="דרכי קשר">
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-chat"/></svg>וואטסאפ</a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="tel:0544407557"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-phone"/></svg><span dir="ltr">054-4407557</span></a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="mailto:Talya@talyaosher.com"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-mail"/></svg>Talya@talyaosher.com</a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="https://www.linkedin.com/in/talya-osher" target="_blank" rel="noopener noreferrer"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-linkedin"/></svg>לינקדאין</a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="https://www.instagram.com/talya_osher_a/" target="_blank" rel="noopener noreferrer"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-instagram"/></svg>אינסטגרם</a></li>
+      </ul>
+    </div>
+
+    <!-- מאמרים (חשוב לגוגל) -->
+    <nav aria-label="מאמרים" class="flex flex-wrap gap-x-5 gap-y-1 mt-10 pt-6 border-t border-white/10 text-[.9rem]">
+      <span class="text-white/90 font-bold py-1">מאמרים:</span>
+      <a class="hover:text-sun py-1" href="blog-pricing.html">תמחור לקבלנים</a>
+      <a class="hover:text-sun py-1" href="blog-milestone-payments.html">גבייה לפי אבני דרך</a>
+      <a class="hover:text-sun py-1" href="blog-contractor-quote.html">הצעת מחיר לקבלן</a>
+      <a class="hover:text-sun py-1" href="blog-interior-design-management.html">ניהול משרד עיצוב פנים</a>
+      <a class="hover:text-sun py-1" href="blog-consulting-vs-coaching.html">ייעוץ עסקי מול קואצ'ינג</a>
+      <a class="hover:text-sun py-1" href="blog-management-system-signs.html">5 סימנים שהעסק צריך סדר</a>
+      <a class="hover:text-sun py-1" href="blog-crm-small-business.html">CRM לעסק קטן</a>
     </nav>
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 pt-6 border-t border-white/10 text-[.95rem]">
-      <img src="logo-white.png" alt="טליה אושר" class="h-12 w-auto"/>
-      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-        <a class="hover:text-sun inline-block py-1.5" href="https://www.linkedin.com/in/talya-osher" target="_blank" rel="noopener noreferrer">לינקדאין</a>
-        <a class="hover:text-sun inline-block py-1.5" href="https://www.instagram.com/talya_osher_a/" target="_blank" rel="noopener noreferrer">אינסטגרם</a>
-        <a class="hover:text-sun inline-block py-1.5" href="accessibility.html">הצהרת נגישות</a>
-        <a class="hover:text-sun inline-block py-1.5" href="#">תנאי שימוש</a>
-        <a class="hover:text-sun inline-block py-1.5" href="#">מדיניות פרטיות</a>
+
+    <!-- שורה משפטית קטנה -->
+    <div class="flex flex-wrap justify-center md:justify-between gap-x-5 gap-y-1 mt-6 text-[.85rem] text-white/70">
+      <div class="flex flex-wrap gap-x-5 gap-y-1">
+        <a class="hover:text-sun py-1" href="accessibility.html">הצהרת נגישות</a>
+        <a class="hover:text-sun py-1" href="#">תנאי שימוש</a>
+        <a class="hover:text-sun py-1" href="#">מדיניות פרטיות</a>
       </div>
-      <div>© 2026 טליה אושר</div>
+      <p class="py-1">© 2026 טליה אושר. כל הזכויות שמורות.</p>
     </div>
   </div>
 </footer>
