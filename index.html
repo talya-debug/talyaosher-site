@@ -65,12 +65,16 @@
   }
 </script>
 <style>
-  body { font-family: 'Heebo', sans-serif; background: #faf9f5; color: #1b1c1a; }
-  h1, h2, .display { font-family: 'Secular One', 'Heebo', sans-serif; font-weight: 400; }
-  .t-display { font-size: clamp(2.2rem, 5vw, 3.9rem); line-height: 1.1; }
-  .t-h2 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); line-height: 1.15; }
-  .t-h3 { font-size: 1.2rem; line-height: 1.35; font-weight: 700; }
+  /* גודל טקסט בסיסי 17px — שום טקסט תוכן לא קטן מ-16px */
+  html { font-size: 17px; }
+  body { font-family: 'Heebo', sans-serif; background: #faf9f5; color: #1b1c1a; line-height: 1.65; }
+  h1, h2, .display { font-family: 'Secular One', 'Heebo', sans-serif; font-weight: 400; text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  .t-display { font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1.12; }
+  .t-h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.2; }
+  .t-h3 { font-size: 1.3rem; line-height: 1.35; font-weight: 700; }
   .lead { font-size: 1.15rem; line-height: 1.7; }
+  .eyebrow-sun { color: #E9C46A; }
   .measure { max-width: 60ch; }
   /* כפתורים */
   .btn-main { max-width: 100%; flex-wrap: wrap; background: #FFB703; color: #1b1c1a; font-weight: 700; border-radius: 999px; padding: .95rem 1.9rem; display: inline-flex; gap: .5rem; align-items: center; justify-content: center; text-align: center; transition: background-color .15s, transform .15s; cursor: pointer; }
@@ -87,9 +91,12 @@
   .ic { width: 1.35rem; height: 1.35rem; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
   .ic-box { width: 2.75rem; height: 2.75rem; border-radius: .9rem; display: grid; place-items: center; }
   /* צ'יפים */
-  .chip { display: inline-flex; align-items: center; gap: .4rem; border-radius: 999px; padding: .4rem .9rem; font-size: .95rem; font-weight: 500; }
+  .chip { display: inline-flex; align-items: center; gap: .4rem; border-radius: 999px; padding: .45rem 1rem; font-size: 1rem; font-weight: 500; }
+  /* כפתור משני על רקע טורקיז */
+  .btn-sub-light { border-color: rgba(255,255,255,.7); color: #fff; }
+  .btn-sub-light:hover { background: rgba(255,255,255,.08); }
   /* בועות צ'אט */
-  .bubble { border-radius: 1rem; padding: .7rem 1rem; max-width: 85%; font-size: 1rem; line-height: 1.5; box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+  .bubble { border-radius: 1rem; padding: .7rem 1rem; max-width: 85%; font-size: 1.02rem; line-height: 1.5; box-shadow: 0 1px 0 rgba(0,0,0,.06); color: #1b1c1a; }
   .bubble-out { background: #fff; border-top-right-radius: .3rem; margin-left: auto; }
   .bubble-in { background: #dcf3e8; border-top-left-radius: .3rem; margin-right: auto; }
   /* שלבים נפתחים */
@@ -148,7 +155,11 @@
 <!-- תפריט עליון -->
 <header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
   <nav class="max-w-[1200px] mx-auto flex items-center justify-between gap-6 px-5 md:px-10 py-3">
-    <a href="#home" class="shrink-0"><img src="logo-mark.png" alt="טליה אושר" class="h-12 md:h-14 w-auto"/></a>
+    <!-- לוגו בצבע אחד על רקע שקוף: סמל ה-T + השם -->
+    <a href="#home" class="shrink-0 flex items-center gap-3" aria-label="טליה אושר — לראש הדף">
+      <img src="logo-t-teal.png" alt="" class="h-10 w-auto"/>
+      <span class="text-teal text-[1.05rem] tracking-[.18em] font-medium" dir="ltr">TALYA OSHER</span>
+    </a>
     <div class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-muted">
       <a href="#approach" class="hover:text-primary">הגישה</a>
       <a href="#process" class="hover:text-primary">איך זה עובד</a>
@@ -163,28 +174,28 @@
 <main>
 
 <!-- ============ HERO ============ -->
-<section id="home" class="pt-28 md:pt-36 pb-16 md:pb-24 px-5 md:px-10">
+<section id="home" class="bg-primary text-white pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-10">
   <div class="max-w-[1200px] mx-auto grid lg:grid-cols-[1.25fr_1fr] gap-12 lg:gap-16 items-center">
     <div>
-      <h1 class="t-display text-primary">אם הכול עדיין עובר דרכך, הגיע הזמן לשנות את הדרך שבה העסק עובד.</h1>
-      <p class="lead text-muted mt-6 measure">אנחנו נכנסים לעסק, מבינים איך העבודה באמת מתבצעת, ומשנים את הדרך שבה היא מתנהלת — כך שהצוות יודע מה לעשות, אתה יודע מה קורה, ורק מה שחריג מגיע אליך.</p>
+      <h1 class="t-display text-white">אם הכול עדיין עובר דרכך, הגיע הזמן לשנות את הדרך שבה העסק עובד.</h1>
+      <p class="lead text-white/85 mt-6 measure">אנחנו נכנסים לעסק, מבינים איך העבודה באמת מתבצעת, ומשנים את הדרך שבה היא מתנהלת — כך שהצוות יודע מה לעשות, אתה יודע מה קורה, ורק מה שחריג מגיע אליך.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
         <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך</a>
-        <a href="#contact" class="btn-sub">קביעת שיחה</a>
+        <a href="#contact" class="btn-sub btn-sub-light">קביעת שיחה</a>
       </div>
-      <p class="text-[15px] text-muted mt-3 flex items-center gap-2"><svg class="ic !w-4 !h-4 text-teal" aria-hidden="true"><use href="#i-mic"/></svg>העוזרת הדיגיטלית של טליה. שיחה קצרה בוואטסאפ — אפשר לכתוב ואפשר להקליט.</p>
+      <p class="text-white/75 mt-4 flex items-center gap-2"><svg class="ic !w-5 !h-5 eyebrow-sun" aria-hidden="true"><use href="#i-mic"/></svg>העוזרת הדיגיטלית של טליה. שיחה קצרה בוואטסאפ — אפשר לכתוב ואפשר להקליט.</p>
     </div>
 
     <!-- הכאב, כמו שהוא נראה ביום-יום: שאלות בוואטסאפ שמחכות לתשובה -->
-    <div class="rounded-3xl bg-[#efeae2] p-5 md:p-6 shadow-[0_30px_60px_-30px_rgba(0,83,91,.45)] border border-white">
+    <div class="rounded-3xl bg-[#efeae2] p-5 md:p-6 shadow-[0_30px_60px_-20px_rgba(0,0,0,.45)]">
       <div class="flex items-center gap-3 pb-4 border-b border-black/5">
-        <span class="ic-box !w-10 !h-10 !rounded-full bg-teal text-white"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span>
+        <span class="ic-box !w-11 !h-11 !rounded-full bg-teal text-white"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span>
         <div>
           <p class="font-bold text-ink leading-tight">יש צוות. יש פרויקטים.</p>
-          <p class="text-sm text-muted">יש וואטסאפ, מיילים, יומן, חשבוניות וקבצים.</p>
+          <p class="text-muted">יש וואטסאפ, מיילים, יומן, חשבוניות וקבצים.</p>
         </div>
       </div>
-      <p class="text-center text-sm text-muted my-4">אבל כשאתה רוצה לדעת מה באמת קורה — אתה עדיין צריך לשאול.</p>
+      <p class="text-center text-muted my-4">אבל כשאתה רוצה לדעת מה באמת קורה — אתה עדיין צריך לשאול.</p>
       <div class="space-y-2.5">
         <p class="bubble bubble-in">איזה פרויקט תקוע?</p>
         <p class="bubble bubble-in">מה כבר בוצע?</p>
@@ -196,16 +207,16 @@
 </section>
 
 <!-- ============ הבעיה ============ -->
-<section class="bg-white py-20 md:py-28 px-5 md:px-10">
-  <div class="max-w-[1200px] mx-auto">
+<section class="bg-white pt-20 md:pt-24 pb-16 md:pb-20 px-5 md:px-10">
+  <div class="max-w-[1100px] mx-auto">
     <h2 class="t-h2 text-primary text-center max-w-3xl mx-auto">כשהעסק גדל, מה שעבד פעם כבר לא תמיד מספיק.</h2>
 
-    <div class="grid md:grid-cols-2 gap-6 mt-12">
+    <div class="grid md:grid-cols-2 gap-5 mt-10">
       <!-- כשהעסק קטן -->
-      <div class="rounded-3xl bg-tealsoft p-7 md:p-9">
+      <div class="rounded-3xl bg-tealsoft p-6 md:p-8 flex flex-col justify-center">
         <p class="display text-2xl text-primary">כשהעסק קטן</p>
         <p class="text-muted mt-1">הרבה דברים יכולים להישאר בראש.</p>
-        <ul class="mt-6 space-y-3 text-[1.05rem]">
+        <ul class="mt-5 space-y-3 text-[1.05rem]">
           <li class="flex gap-3 items-start"><svg class="ic text-teal mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>אתה יודע מה קורה בכל פרויקט.</li>
           <li class="flex gap-3 items-start"><svg class="ic text-teal mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>אתה זוכר למי צריך לחזור.</li>
           <li class="flex gap-3 items-start"><svg class="ic text-teal mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>אתה יודע מה מחכה לאישור.</li>
@@ -213,50 +224,55 @@
         </ul>
       </div>
       <!-- כשהעסק גדל -->
-      <div class="rounded-3xl bg-sunsoft p-7 md:p-9">
+      <div class="rounded-3xl bg-sunsoft p-6 md:p-8">
         <p class="display text-2xl text-primary">אבל העסק גדל</p>
         <p class="text-muted mt-1">יש יותר אנשים, יותר פרויקטים, יותר לקוחות ויותר מידע.</p>
-        <p class="mt-6 font-bold text-ink">ופתאום אתה צריך:</p>
+        <p class="mt-5 font-bold text-ink">ופתאום אתה צריך:</p>
         <div class="mt-3 grid grid-cols-3 gap-3 text-center">
-          <div class="rounded-2xl bg-white p-4"><p class="display text-2xl md:text-3xl text-primary">לשאול</p><p class="text-sm text-muted mt-1">כדי לדעת</p></div>
-          <div class="rounded-2xl bg-white p-4"><p class="display text-2xl md:text-3xl text-primary">לבדוק</p><p class="text-sm text-muted mt-1">כדי לוודא</p></div>
-          <div class="rounded-2xl bg-white p-4"><p class="display text-2xl md:text-3xl text-primary">להזכיר</p><p class="text-sm text-muted mt-1">כדי שדברים יקרו</p></div>
+          <div class="rounded-2xl bg-white p-4"><p class="display text-2xl md:text-3xl text-primary">לשאול</p><p class="text-muted mt-1 leading-snug">כדי לדעת</p></div>
+          <div class="rounded-2xl bg-white p-4"><p class="display text-2xl md:text-3xl text-primary">לבדוק</p><p class="text-muted mt-1 leading-snug">כדי לוודא</p></div>
+          <div class="rounded-2xl bg-white p-4"><p class="display text-2xl md:text-3xl text-primary">להזכיר</p><p class="text-muted mt-1 leading-snug">כדי שדברים יקרו</p></div>
         </div>
         <p class="text-muted mt-5">ומה שעבד כשהייתם קטנים הופך לעומס עליך ועל הצוות.</p>
       </div>
     </div>
 
-    <p class="display text-2xl md:text-3xl text-center text-primary mt-12 max-w-3xl mx-auto">העסק כבר גדול מכדי להתנהל מהראש של אדם אחד.</p>
+    <p class="display text-2xl md:text-3xl text-center text-primary mt-10 max-w-3xl mx-auto">העסק כבר גדול מכדי להתנהל מהראש של אדם אחד.</p>
   </div>
 </section>
 
 <!-- ============ הגישה ============ -->
-<section id="approach" class="py-20 md:py-28 px-5 md:px-10">
-  <div class="max-w-[1200px] mx-auto">
-    <div class="max-w-3xl">
+<section id="approach" class="py-20 md:py-24 px-5 md:px-10">
+  <div class="max-w-[1100px] mx-auto">
+    <div class="text-center max-w-3xl mx-auto">
       <h2 class="t-h2 text-primary">אנחנו לא מגיעים עם מערכת ומבקשים מהעסק להתאים את עצמו אליה.</h2>
-      <p class="lead text-muted mt-5">קודם אנחנו לומדים איך העסק עובד בפועל:</p>
+      <p class="lead text-muted mt-4">קודם אנחנו לומדים איך העסק עובד בפועל:</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-8">
-      <div class="rounded-2xl bg-white border border-slate-200 p-5"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><p class="font-bold mt-4">איך פרויקט מתחיל</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-5"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><p class="font-bold mt-4">מי מטפל בכל שלב</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-5"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-split"/></svg></span><p class="font-bold mt-4">איפה מתקבלות החלטות</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-5"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span><p class="font-bold mt-4">איפה מידע הולך לאיבוד</p></div>
-      <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:col-span-2 lg:col-span-1"><span class="ic-box bg-sunsoft text-[#765a05]"><svg class="ic" aria-hidden="true"><use href="#i-inbox"/></svg></span><p class="font-bold mt-4">מה מגיע אליך כי באמת צריך את ההחלטה שלך — ומה מגיע אליך פשוט כי אין דרך אחרת</p></div>
+    <!-- ארבעה דברים שלומדים — אריחים באותו גובה -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+      <div class="rounded-2xl bg-white border border-slate-200 p-5 flex items-center gap-3"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-flag"/></svg></span><p class="font-bold leading-snug">איך פרויקט מתחיל</p></div>
+      <div class="rounded-2xl bg-white border border-slate-200 p-5 flex items-center gap-3"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span><p class="font-bold leading-snug">מי מטפל בכל שלב</p></div>
+      <div class="rounded-2xl bg-white border border-slate-200 p-5 flex items-center gap-3"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-split"/></svg></span><p class="font-bold leading-snug">איפה מתקבלות החלטות</p></div>
+      <div class="rounded-2xl bg-white border border-slate-200 p-5 flex items-center gap-3"><span class="ic-box bg-tealsoft text-teal"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span><p class="font-bold leading-snug">איפה מידע הולך לאיבוד</p></div>
+    </div>
+    <!-- הדבר החמישי — השאלה החשובה ביותר, ברצועה נפרדת -->
+    <div class="mt-4 rounded-2xl bg-sunsoft p-5 md:p-6 flex items-center gap-4">
+      <span class="ic-box bg-white text-[#765a05]"><svg class="ic" aria-hidden="true"><use href="#i-inbox"/></svg></span>
+      <p class="font-bold text-ink text-[1.1rem] leading-snug">מה מגיע אליך כי באמת צריך את ההחלטה שלך — ומה מגיע אליך פשוט כי אין דרך אחרת.</p>
     </div>
 
-    <div class="mt-10 grid md:grid-cols-[1.4fr_1fr] gap-6 items-center">
+    <div class="mt-12 text-center max-w-3xl mx-auto">
       <p class="lead text-muted">משם אנחנו מגדירים יחד מה צריך להשתנות, ובונים את דרך העבודה, הכלים והטכנולוגיה שיתמכו בה.</p>
-      <p class="display text-xl md:text-2xl text-primary border-r-4 border-cta pr-4">הפתרון נבנה סביב העסק. לא העסק סביב הפתרון.</p>
+      <p class="display text-2xl md:text-3xl text-primary mt-5">הפתרון נבנה סביב העסק. לא העסק סביב הפתרון.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ מה אנחנו עושים ============ -->
-<section class="bg-white py-20 md:py-28 px-5 md:px-10">
+<section class="bg-white py-20 md:py-24 px-5 md:px-10">
   <div class="max-w-[1200px] mx-auto">
-    <div class="max-w-3xl">
+    <div class="text-center max-w-3xl mx-auto">
       <h2 class="t-h2 text-primary">הנה בעיות תפעוליות שהפכנו לדרך עבודה שעובדת.</h2>
       <p class="lead text-muted mt-5">אנחנו משלבים ייעוץ עסקי, תכנון תהליכים, בניית תשתיות וטכנולוגיה. לא כדי להוסיף עוד מערכת, אלא כדי שהעבודה תדרוש פחות רדיפה, פחות תזכורות ופחות תלות בבעל העסק.</p>
     </div>
@@ -266,7 +282,7 @@
       <article class="rounded-3xl bg-sand border border-slate-200 p-7 md:p-8 flex flex-col">
         <span class="ic-box bg-teal text-white"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></span>
         <h3 class="display text-2xl text-primary mt-5">מגדירים איך עובדים</h3>
-        <ul class="mt-5 space-y-2.5 text-[1.02rem] text-muted">
+        <ul class="mt-5 space-y-2.5 text-[1.05rem] text-muted">
           <li class="flex gap-2.5"><svg class="ic !w-5 !h-5 text-teal mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>מי אחראי על מה</li>
           <li class="flex gap-2.5"><svg class="ic !w-5 !h-5 text-teal mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>מהם שלבי העבודה</li>
           <li class="flex gap-2.5"><svg class="ic !w-5 !h-5 text-teal mt-0.5" aria-hidden="true"><use href="#i-check"/></svg>מתי משהו נחשב גמור</li>
@@ -280,9 +296,9 @@
       <article class="rounded-3xl bg-sand border border-slate-200 p-7 md:p-8 flex flex-col">
         <span class="ic-box bg-teal text-white"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg></span>
         <h3 class="display text-2xl text-primary mt-5">מחברים את המידע שצריך</h3>
-        <p class="mt-4 text-[1.02rem] text-muted">בונים תמונת מצב ברורה של העסק — פרויקטים, שלבים, משימות, אירועים וחריגים.</p>
+        <p class="mt-4 text-[1.05rem] text-muted">בונים תמונת מצב ברורה של העסק — פרויקטים, שלבים, משימות, אירועים וחריגים.</p>
         <!-- כל כלי נשאר איפה שהוא -->
-        <div class="mt-5 rounded-2xl bg-white border border-slate-200 p-4 text-sm">
+        <div class="mt-5 rounded-2xl bg-white border border-slate-200 p-4">
           <div class="flex flex-wrap gap-2">
             <span class="chip bg-slate-100 text-ink">חשבוניות בתוכנת החשבוניות</span>
             <span class="chip bg-slate-100 text-ink">קבצים בדרייב</span>
@@ -297,8 +313,8 @@
       <article class="rounded-3xl bg-sand border border-slate-200 p-7 md:p-8 flex flex-col">
         <span class="ic-box bg-teal text-white"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span>
         <h3 class="display text-2xl text-primary mt-5">נותנים לטכנולוגיה לעשות את העבודה הנכונה</h3>
-        <p class="mt-4 text-[1.02rem] text-muted">הטכנולוגיה צריכה להוריד עבודה מהצוות — לא להוסיף עוד מערכת שצריך לתחזק.</p>
-        <p class="mt-3 text-[1.02rem] text-muted">מערכות וסוכנים יכולים לקרוא מידע שכבר קיים בעסק, לזהות מה השתנה, לאתר דברים שדורשים תשומת לב ולהעביר אותם לאדם הנכון.</p>
+        <p class="mt-4 text-[1.05rem] text-muted">הטכנולוגיה צריכה להוריד עבודה מהצוות — לא להוסיף עוד מערכת שצריך לתחזק.</p>
+        <p class="mt-3 text-[1.05rem] text-muted">מערכות וסוכנים יכולים לקרוא מידע שכבר קיים בעסק, לזהות מה השתנה, לאתר דברים שדורשים תשומת לב ולהעביר אותם לאדם הנכון.</p>
         <div class="mt-auto pt-6">
           <div class="flex items-center gap-2 rounded-2xl bg-sunsoft px-4 py-3">
             <span class="font-bold text-primary">AI מזהה ומעביר.</span>
@@ -311,49 +327,42 @@
 </section>
 
 <!-- ============ איך זה עובד ============ -->
-<section id="process" class="py-20 md:py-28 px-5 md:px-10">
-  <div class="max-w-[1200px] mx-auto grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16">
-    <div>
-      <div class="lg:sticky lg:top-32">
-        <h2 class="t-h2 text-primary">איך זה עובד</h2>
-        <p class="lead text-muted mt-4">שבעה שלבים. לחיצה על שלב פותחת את הפירוט.</p>
-        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main mt-7 hidden lg:inline-flex">דבר עם <span class="ph">[שם העוזרת]</span> בוואטסאפ</a>
-      </div>
+<section id="process" class="py-20 md:py-24 px-5 md:px-10">
+  <div class="max-w-[860px] mx-auto">
+    <div class="text-center">
+      <h2 class="t-h2 text-primary">איך זה עובד</h2>
+      <p class="lead text-muted mt-3">שבעה שלבים. לחיצה על שלב פותחת את הפירוט.</p>
     </div>
-
-    <div class="space-y-3">
-      <!-- 01 -->
-      <details class="step group rounded-2xl bg-white border-2 border-cta" open>
-        <summary class="flex items-center gap-4 p-5 md:p-6">
-          <span class="display text-2xl text-[#b07d00] w-10 shrink-0">01</span>
-          <span class="flex-1"><span class="t-h3 text-primary block">מתחילים בשיחה עם העוזרת</span><span class="text-muted">ספר לה על העסק שלך בוואטסאפ — בכתב או בהקלטה.</span></span>
-          <svg class="ic chev text-muted" aria-hidden="true"><use href="#i-chev"/></svg>
+    <div class="space-y-3 mt-10">
+      <details class="step rounded-2xl bg-white border border-cta border-2" open>
+        <summary class="grid grid-cols-[3rem_1fr_auto] items-center gap-4 p-5 md:p-6">
+          <span class="w-12 h-12 rounded-full bg-cta text-ink grid place-items-center display text-xl" aria-hidden="true">01</span>
+          <span><span class="block text-[1.3rem] font-bold text-primary leading-tight">מתחילים בשיחה עם העוזרת</span><span class="block text-[1.05rem] text-muted mt-1 leading-snug">ספר לה על העסק שלך בוואטסאפ — בכתב או בהקלטה.</span></span>
+          <svg class="ic chev text-teal" aria-hidden="true"><use href="#i-chev"/></svg>
         </summary>
-        <div class="px-5 md:px-6 pb-6 md:pr-20 text-[1.02rem] leading-7 text-muted">
+        <div class="pb-6 px-5 md:px-6 md:pr-[5.5rem] text-[1.05rem] leading-7 text-muted">
           <p>היא תשאל אותך על העסק, הצוות והדרך שבה אתם עובדים, ותעזור לנו להבין מה קורה בעסק ומה כדאי לבדוק קודם.</p>
           <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main mt-5">דבר עם <span class="ph">[שם העוזרת]</span> בוואטסאפ</a>
         </div>
       </details>
-      <!-- 02 -->
       <details class="step rounded-2xl bg-white border border-slate-200">
-        <summary class="flex items-center gap-4 p-5 md:p-6">
-          <span class="display text-2xl text-teal w-10 shrink-0">02</span>
-          <span class="flex-1"><span class="t-h3 text-primary block">שיחה</span><span class="text-muted">אם יש התאמה, אנחנו מדברים.</span></span>
-          <svg class="ic chev text-muted" aria-hidden="true"><use href="#i-chev"/></svg>
+        <summary class="grid grid-cols-[3rem_1fr_auto] items-center gap-4 p-5 md:p-6">
+          <span class="w-12 h-12 rounded-full bg-teal text-white grid place-items-center display text-xl" aria-hidden="true">02</span>
+          <span><span class="block text-[1.3rem] font-bold text-primary leading-tight">שיחה</span><span class="block text-[1.05rem] text-muted mt-1 leading-snug">אם יש התאמה, אנחנו מדברים.</span></span>
+          <svg class="ic chev text-teal" aria-hidden="true"><use href="#i-chev"/></svg>
         </summary>
-        <div class="px-5 md:px-6 pb-6 md:pr-20 text-[1.02rem] leading-7 text-muted">
+        <div class="pb-6 px-5 md:px-6 md:pr-[5.5rem] text-[1.05rem] leading-7 text-muted">
           <p>מבינים את העסק, את האתגרים ואת מה שאתה רוצה לשנות.</p>
           <p class="mt-2 text-ink">לא מציגים לך מערכת ולא מנסים להתאים אותך לפתרון מוכן.</p>
         </div>
       </details>
-      <!-- 03 -->
       <details class="step rounded-2xl bg-white border border-slate-200">
-        <summary class="flex items-center gap-4 p-5 md:p-6">
-          <span class="display text-2xl text-teal w-10 shrink-0">03</span>
-          <span class="flex-1"><span class="t-h3 text-primary block">מיפוי</span><span class="text-muted">נכנסים לעבודה עצמה, ויוצאים עם תוכנית ברורה.</span></span>
-          <svg class="ic chev text-muted" aria-hidden="true"><use href="#i-chev"/></svg>
+        <summary class="grid grid-cols-[3rem_1fr_auto] items-center gap-4 p-5 md:p-6">
+          <span class="w-12 h-12 rounded-full bg-teal text-white grid place-items-center display text-xl" aria-hidden="true">03</span>
+          <span><span class="block text-[1.3rem] font-bold text-primary leading-tight">מיפוי</span><span class="block text-[1.05rem] text-muted mt-1 leading-snug">נכנסים לעבודה עצמה, ויוצאים עם תוכנית ברורה.</span></span>
+          <svg class="ic chev text-teal" aria-hidden="true"><use href="#i-chev"/></svg>
         </summary>
-        <div class="px-5 md:px-6 pb-6 md:pr-20 text-[1.02rem] leading-7 text-muted">
+        <div class="pb-6 px-5 md:px-6 md:pr-[5.5rem] text-[1.05rem] leading-7 text-muted">
           <p>מבינים איך הדברים באמת קורים, איפה נוצרים עיכובים, מה תלוי בך, איפה האחריות לא ברורה ואיזה מידע חסר כדי לדעת מה קורה.</p>
           <p class="mt-3 font-bold text-ink">בסוף המיפוי יש תוכנית ברורה:</p>
           <div class="flex flex-wrap gap-2 mt-2">
@@ -365,50 +374,46 @@
           </div>
         </div>
       </details>
-      <!-- 04 -->
       <details class="step rounded-2xl bg-white border border-slate-200">
-        <summary class="flex items-center gap-4 p-5 md:p-6">
-          <span class="display text-2xl text-teal w-10 shrink-0">04</span>
-          <span class="flex-1"><span class="t-h3 text-primary block">בונים ומטמיעים</span><span class="text-muted">הופכים את מה שהחלטנו לדרך שבה העסק באמת עובד.</span></span>
-          <svg class="ic chev text-muted" aria-hidden="true"><use href="#i-chev"/></svg>
+        <summary class="grid grid-cols-[3rem_1fr_auto] items-center gap-4 p-5 md:p-6">
+          <span class="w-12 h-12 rounded-full bg-teal text-white grid place-items-center display text-xl" aria-hidden="true">04</span>
+          <span><span class="block text-[1.3rem] font-bold text-primary leading-tight">בונים ומטמיעים</span><span class="block text-[1.05rem] text-muted mt-1 leading-snug">הופכים את מה שהחלטנו לדרך שבה העסק באמת עובד.</span></span>
+          <svg class="ic chev text-teal" aria-hidden="true"><use href="#i-chev"/></svg>
         </summary>
-        <div class="px-5 md:px-6 pb-6 md:pr-20 text-[1.02rem] leading-7 text-muted">
+        <div class="pb-6 px-5 md:px-6 md:pr-[5.5rem] text-[1.05rem] leading-7 text-muted">
           <p>מגדירים תהליכים, בונים את התשתית המתאימה ומכניסים אותה לעבודה עם הצוות. עובדים עם האנשים שמבצעים את העבודה בפועל, בודקים מה קורה במציאות ומתקנים תוך כדי.</p>
           <p class="mt-2 text-ink">לא בונים משהו ומקווים שהצוות יאמץ אותו. בונים אותו יחד עם העבודה עצמה.</p>
         </div>
       </details>
-      <!-- 05 -->
       <details class="step rounded-2xl bg-white border border-slate-200">
-        <summary class="flex items-center gap-4 p-5 md:p-6">
-          <span class="display text-2xl text-teal w-10 shrink-0">05</span>
-          <span class="flex-1"><span class="t-h3 text-primary block">מחברים טכנולוגיה ו-AI</span><span class="text-muted">רק במקומות שבהם הם באמת יכולים להוריד עבודה.</span></span>
-          <svg class="ic chev text-muted" aria-hidden="true"><use href="#i-chev"/></svg>
+        <summary class="grid grid-cols-[3rem_1fr_auto] items-center gap-4 p-5 md:p-6">
+          <span class="w-12 h-12 rounded-full bg-teal text-white grid place-items-center display text-xl" aria-hidden="true">05</span>
+          <span><span class="block text-[1.3rem] font-bold text-primary leading-tight">מחברים טכנולוגיה ו-AI</span><span class="block text-[1.05rem] text-muted mt-1 leading-snug">רק במקומות שבהם הם באמת יכולים להוריד עבודה.</span></span>
+          <svg class="ic chev text-teal" aria-hidden="true"><use href="#i-chev"/></svg>
         </summary>
-        <div class="px-5 md:px-6 pb-6 md:pr-20 text-[1.02rem] leading-7 text-muted">
+        <div class="pb-6 px-5 md:px-6 md:pr-[5.5rem] text-[1.05rem] leading-7 text-muted">
           <p>המידע שכבר נוצר בעבודה הופך למקור לתמונת מצב. המערכת או הסוכן יכולים לזהות שינויים, חריגים ודברים שדורשים תשומת לב — ולהעביר אותם לאדם הנכון.</p>
           <p class="mt-2 text-ink">לא מחליפים את שיקול הדעת של האנשים. מורידים מהם את העבודה שלא חייבת להגיע אליהם.</p>
         </div>
       </details>
-      <!-- 06 -->
       <details class="step rounded-2xl bg-white border border-slate-200">
-        <summary class="flex items-center gap-4 p-5 md:p-6">
-          <span class="display text-2xl text-teal w-10 shrink-0">06</span>
-          <span class="flex-1"><span class="t-h3 text-primary block">מריצים את זה בעסק</span><span class="text-muted">הדרך החדשה נכנסת לעבודה היומיומית.</span></span>
-          <svg class="ic chev text-muted" aria-hidden="true"><use href="#i-chev"/></svg>
+        <summary class="grid grid-cols-[3rem_1fr_auto] items-center gap-4 p-5 md:p-6">
+          <span class="w-12 h-12 rounded-full bg-teal text-white grid place-items-center display text-xl" aria-hidden="true">06</span>
+          <span><span class="block text-[1.3rem] font-bold text-primary leading-tight">מריצים את זה בעסק</span><span class="block text-[1.05rem] text-muted mt-1 leading-snug">הדרך החדשה נכנסת לעבודה היומיומית.</span></span>
+          <svg class="ic chev text-teal" aria-hidden="true"><use href="#i-chev"/></svg>
         </summary>
-        <div class="px-5 md:px-6 pb-6 md:pr-20 text-[1.02rem] leading-7 text-muted">
+        <div class="pb-6 px-5 md:px-6 md:pr-[5.5rem] text-[1.05rem] leading-7 text-muted">
           <p>הצוות משתמש בה. אנחנו רואים מה עובד, איפה עדיין נוצר חיכוך ומה צריך לשנות.</p>
           <p class="mt-2 text-ink">המטרה היא לא שהצוות "ילמד מערכת". המטרה היא שזו תהיה פשוט הדרך שבה העסק עובד.</p>
         </div>
       </details>
-      <!-- 07 -->
       <details class="step rounded-2xl bg-white border border-slate-200">
-        <summary class="flex items-center gap-4 p-5 md:p-6">
-          <span class="display text-2xl text-teal w-10 shrink-0">07</span>
-          <span class="flex-1"><span class="t-h3 text-primary block">בודקים ומשפרים</span><span class="text-muted">חוזרים למה שהגדרנו בתחילת הדרך ובודקים מה השתנה.</span></span>
-          <svg class="ic chev text-muted" aria-hidden="true"><use href="#i-chev"/></svg>
+        <summary class="grid grid-cols-[3rem_1fr_auto] items-center gap-4 p-5 md:p-6">
+          <span class="w-12 h-12 rounded-full bg-teal text-white grid place-items-center display text-xl" aria-hidden="true">07</span>
+          <span><span class="block text-[1.3rem] font-bold text-primary leading-tight">בודקים ומשפרים</span><span class="block text-[1.05rem] text-muted mt-1 leading-snug">חוזרים למה שהגדרנו בתחילת הדרך ובודקים מה השתנה.</span></span>
+          <svg class="ic chev text-teal" aria-hidden="true"><use href="#i-chev"/></svg>
         </summary>
-        <div class="px-5 md:px-6 pb-6 md:pr-20 text-[1.02rem] leading-7 text-muted">
+        <div class="pb-6 px-5 md:px-6 md:pr-[5.5rem] text-[1.05rem] leading-7 text-muted">
           <div class="flex flex-wrap gap-2">
             <span class="chip bg-tealsoft text-primary">מה השתפר</span>
             <span class="chip bg-tealsoft text-primary">איפה עדיין יש עומס</span>
@@ -434,22 +439,22 @@
       <div class="rounded-2xl bg-white/[.07] border border-white/10 p-6">
         <span class="ic-box bg-white/10 text-sun"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg></span>
         <p class="font-bold text-lg mt-4">יודע איפה הדברים עומדים</p>
-        <p class="text-white/75 mt-2 text-[.98rem] leading-6">בלי לעבור על כל פרויקט. ומה דורש את תשומת הלב שלך.</p>
+        <p class="text-white/75 mt-2 text-[1.05rem] leading-7">בלי לעבור על כל פרויקט. ומה דורש את תשומת הלב שלך.</p>
       </div>
       <div class="rounded-2xl bg-white/[.07] border border-white/10 p-6">
         <span class="ic-box bg-white/10 text-sun"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span>
         <p class="font-bold text-lg mt-4">הצוות יודע מה האחריות שלו</p>
-        <p class="text-white/75 mt-2 text-[.98rem] leading-6">ומה צריך לקרות בכל שלב.</p>
+        <p class="text-white/75 mt-2 text-[1.05rem] leading-7">ומה צריך לקרות בכל שלב.</p>
       </div>
       <div class="rounded-2xl bg-white/[.07] border border-white/10 p-6">
         <span class="ic-box bg-white/10 text-sun"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg></span>
         <p class="font-bold text-lg mt-4">בעיות עולות בזמן</p>
-        <p class="text-white/75 mt-2 text-[.98rem] leading-6">דברים לא נשארים תקועים רק כי אף אחד לא שם לב שהם מחכים.</p>
+        <p class="text-white/75 mt-2 text-[1.05rem] leading-7">דברים לא נשארים תקועים רק כי אף אחד לא שם לב שהם מחכים.</p>
       </div>
       <div class="rounded-2xl bg-white/[.07] border border-white/10 p-6">
         <span class="ic-box bg-white/10 text-sun"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></span>
         <p class="font-bold text-lg mt-4">אתה מתעסק במה שדורש אותך</p>
-        <p class="text-white/75 mt-2 text-[.98rem] leading-6">במקום לחבר כל יום מחדש את כל חלקי העסק.</p>
+        <p class="text-white/75 mt-2 text-[1.05rem] leading-7">במקום לחבר כל יום מחדש את כל חלקי העסק.</p>
       </div>
     </div>
 
@@ -498,49 +503,49 @@
       <button type="button" onclick="openCase('case-contractor')" class="group text-right rounded-3xl overflow-hidden border border-slate-200 bg-sand hover:border-teal transition-colors cursor-pointer">
         <img class="w-full h-48 object-cover object-top" loading="lazy" src="project-contractor.png" alt="לוח פרויקטים של קבלן ביצוע"/>
         <div class="p-6 md:p-7">
-          <span class="text-sm font-bold text-[#765a05]">קבלן ביצוע</span>
+          <span class="font-bold text-[#765a05]">קבלן ביצוע</span>
           <h3 class="t-h3 text-primary mt-1">מניהול פרויקטים מהראש ובוואטסאפ — לתמונת מצב שאפשר לעבוד איתה</h3>
-          <div class="grid grid-cols-2 gap-3 mt-5 text-[.95rem] leading-6">
-            <div class="rounded-xl bg-white p-3"><p class="text-xs font-bold text-slate-500">קודם</p><p class="text-muted mt-1">פרויקטים ותשלומים בראש של בעל העסק ובוואטסאפ</p></div>
-            <div class="rounded-xl bg-tealsoft p-3"><p class="text-xs font-bold text-teal">היום</p><p class="text-ink mt-1">רואים במקום אחד איפה כל פרויקט עומד ואיזה תשלום מגיע</p></div>
+          <div class="grid grid-cols-2 gap-3 mt-5 text-[1rem] leading-6">
+            <div class="rounded-xl bg-white p-3"><p class="text-sm font-bold text-slate-500">קודם</p><p class="text-muted mt-1">פרויקטים ותשלומים בראש של בעל העסק ובוואטסאפ</p></div>
+            <div class="rounded-xl bg-tealsoft p-3"><p class="text-sm font-bold text-teal">היום</p><p class="text-ink mt-1">רואים במקום אחד איפה כל פרויקט עומד ואיזה תשלום מגיע</p></div>
           </div>
-          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold text-[15px]">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </div>
       </button>
       <button type="button" onclick="openCase('case-studio')" class="group text-right rounded-3xl overflow-hidden border border-slate-200 bg-sand hover:border-teal transition-colors cursor-pointer">
         <img class="w-full h-48 object-cover object-top" loading="lazy" src="project-yael-dashboard.png" alt="ריכוז פרויקטים בסטודיו לעיצוב פנים"/>
         <div class="p-6 md:p-7">
-          <span class="text-sm font-bold text-[#765a05]">סטודיו לעיצוב פנים</span>
+          <span class="font-bold text-[#765a05]">סטודיו לעיצוב פנים</span>
           <h3 class="t-h3 text-primary mt-1">ממידע שהיה מפוזר בין אקסלים, דפים ואנשים — לתהליך עבודה ברור</h3>
-          <div class="grid grid-cols-2 gap-3 mt-5 text-[.95rem] leading-6">
-            <div class="rounded-xl bg-white p-3"><p class="text-xs font-bold text-slate-500">קודם</p><p class="text-muted mt-1">כל פרויקט באקסל אחר, והתמונה המלאה רק אצל הבעלים</p></div>
-            <div class="rounded-xl bg-tealsoft p-3"><p class="text-xs font-bold text-teal">היום</p><p class="text-ink mt-1">הצוות רואה מה הבא בכל פרויקט בלי לשאול</p></div>
+          <div class="grid grid-cols-2 gap-3 mt-5 text-[1rem] leading-6">
+            <div class="rounded-xl bg-white p-3"><p class="text-sm font-bold text-slate-500">קודם</p><p class="text-muted mt-1">כל פרויקט באקסל אחר, והתמונה המלאה רק אצל הבעלים</p></div>
+            <div class="rounded-xl bg-tealsoft p-3"><p class="text-sm font-bold text-teal">היום</p><p class="text-ink mt-1">הצוות רואה מה הבא בכל פרויקט בלי לשאול</p></div>
           </div>
-          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold text-[15px]">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </div>
       </button>
       <button type="button" onclick="openCase('case-infra')" class="group text-right rounded-3xl overflow-hidden border border-slate-200 bg-sand hover:border-teal transition-colors cursor-pointer">
         <img class="w-full h-48 object-cover object-top" loading="lazy" src="project-wasim.png" alt="שיוך מיילים לפרויקטים בחברת תשתיות"/>
         <div class="p-6 md:p-7">
-          <span class="text-sm font-bold text-[#765a05]">חברת תשתיות, 11 עובדים</span>
+          <span class="font-bold text-[#765a05]">חברת תשתיות, 11 עובדים</span>
           <h3 class="t-h3 text-primary mt-1">מתיבת מיילים שכולם תלויים בה — לאחריות ברורה על כל פנייה</h3>
-          <div class="grid grid-cols-2 gap-3 mt-5 text-[.95rem] leading-6">
-            <div class="rounded-xl bg-white p-3"><p class="text-xs font-bold text-slate-500">קודם</p><p class="text-muted mt-1">הרבה מיילים, ולא ברור מי מטפל בכל אחד</p></div>
-            <div class="rounded-xl bg-tealsoft p-3"><p class="text-xs font-bold text-teal">היום</p><p class="text-ink mt-1">כל מייל שייך לפרויקט ולאחראי</p></div>
+          <div class="grid grid-cols-2 gap-3 mt-5 text-[1rem] leading-6">
+            <div class="rounded-xl bg-white p-3"><p class="text-sm font-bold text-slate-500">קודם</p><p class="text-muted mt-1">הרבה מיילים, ולא ברור מי מטפל בכל אחד</p></div>
+            <div class="rounded-xl bg-tealsoft p-3"><p class="text-sm font-bold text-teal">היום</p><p class="text-ink mt-1">כל מייל שייך לפרויקט ולאחראי</p></div>
           </div>
-          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold text-[15px]">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </div>
       </button>
       <button type="button" onclick="openCase('case-wood')" class="group text-right rounded-3xl overflow-hidden border border-slate-200 bg-sand hover:border-teal transition-colors cursor-pointer">
         <img class="w-full h-48 object-cover object-top" loading="lazy" src="project-uri.png" alt="תמחור עבודות עץ"/>
         <div class="p-6 md:p-7">
-          <span class="text-sm font-bold text-[#765a05]">בעל מקצוע, עבודות עץ</span>
+          <span class="font-bold text-[#765a05]">בעל מקצוע, עבודות עץ</span>
           <h3 class="t-h3 text-primary mt-1">מתמחור מהבטן — לדרך קבועה לדעת על מה מרוויחים</h3>
-          <div class="grid grid-cols-2 gap-3 mt-5 text-[.95rem] leading-6">
-            <div class="rounded-xl bg-white p-3"><p class="text-xs font-bold text-slate-500">קודם</p><p class="text-muted mt-1">כל הצעת מחיר נבנתה מחדש, מהראש</p></div>
-            <div class="rounded-xl bg-tealsoft p-3"><p class="text-xs font-bold text-teal">היום</p><p class="text-ink mt-1">הרווח ידוע לפני ששולחים הצעה</p></div>
+          <div class="grid grid-cols-2 gap-3 mt-5 text-[1rem] leading-6">
+            <div class="rounded-xl bg-white p-3"><p class="text-sm font-bold text-slate-500">קודם</p><p class="text-muted mt-1">כל הצעת מחיר נבנתה מחדש, מהראש</p></div>
+            <div class="rounded-xl bg-tealsoft p-3"><p class="text-sm font-bold text-teal">היום</p><p class="text-ink mt-1">הרווח ידוע לפני ששולחים הצעה</p></div>
           </div>
-          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold text-[15px]">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          <span class="inline-flex items-center gap-1 mt-5 text-teal font-bold">לקריאת המקרה המלא<svg class="ic !w-4 !h-4" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </div>
       </button>
     </div>
@@ -550,9 +555,9 @@
 <!-- תוכן המקרים המלא — נפתח בחלון -->
 <div class="hidden">
   <div id="case-contractor">
-    <span class="text-sm font-bold text-[#765a05]">קבלן ביצוע</span>
+    <span class="font-bold text-[#765a05]">קבלן ביצוע</span>
     <h3 class="display text-2xl text-primary mt-1 mb-6">מניהול פרויקטים מהראש ובוואטסאפ — לתמונת מצב שאפשר לעבוד איתה</h3>
-    <ol class="space-y-4 text-[1.02rem] leading-7">
+    <ol class="space-y-4 text-[1.05rem] leading-7">
       <li><p class="font-bold text-ink">איך זה עבד קודם</p><p class="text-muted">כל פרויקט, הצעת מחיר ותשלום ישבו בראש של בעל העסק ובקבוצות וואטסאפ.</p></li>
       <li><p class="font-bold text-ink">מה לא עבד</p><p class="text-muted">כדי לדעת איפה פרויקט עומד או איזה תשלום עוד לא נגבה, היה צריך לשאול, לחפש או לזכור.</p></li>
       <li><p class="font-bold text-ink">מה שינינו</p><p class="text-muted">הגדרנו את שלבי הפרויקט מהפנייה הראשונה ועד הגבייה האחרונה, מי אחראי בכל שלב, ומתי שלב נחשב גמור. הגבייה עברה לאבני דרך קבועות.</p></li>
@@ -561,9 +566,9 @@
     </ol>
   </div>
   <div id="case-studio">
-    <span class="text-sm font-bold text-[#765a05]">סטודיו לעיצוב פנים</span>
+    <span class="font-bold text-[#765a05]">סטודיו לעיצוב פנים</span>
     <h3 class="display text-2xl text-primary mt-1 mb-6">ממידע שהיה מפוזר בין אקסלים, דפים ואנשים — לתהליך עבודה ברור</h3>
-    <ol class="space-y-4 text-[1.02rem] leading-7">
+    <ol class="space-y-4 text-[1.05rem] leading-7">
       <li><p class="font-bold text-ink">איך זה עבד קודם</p><p class="text-muted">כל פרויקט נוהל באקסל אחר ובדפים ביד.</p></li>
       <li><p class="font-bold text-ink">מה לא עבד</p><p class="text-muted">התמונה המלאה של כל פרויקט — מה נעשה, מה הבא ומה הדדליין — הייתה אצל בעלת הסטודיו. הצוות היה צריך לשאול.</p></li>
       <li><p class="font-bold text-ink">מה שינינו</p><p class="text-muted">הגדרנו תכולה קבועה לכל סוג פרויקט ודדליין לכל שלב, כך שכל פרויקט עובר באותה דרך.</p></li>
@@ -572,9 +577,9 @@
     </ol>
   </div>
   <div id="case-infra">
-    <span class="text-sm font-bold text-[#765a05]">חברת תשתיות, 11 עובדים</span>
+    <span class="font-bold text-[#765a05]">חברת תשתיות, 11 עובדים</span>
     <h3 class="display text-2xl text-primary mt-1 mb-6">מתיבת מיילים שכולם תלויים בה — לאחריות ברורה על כל פנייה</h3>
-    <ol class="space-y-4 text-[1.02rem] leading-7">
+    <ol class="space-y-4 text-[1.05rem] leading-7">
       <li><p class="font-bold text-ink">איך זה עבד קודם</p><p class="text-muted">הרבה מיילים על הרבה פרויקטים, וכל אחד בצוות היה צריך לעבור על הכול.</p></li>
       <li><p class="font-bold text-ink">מה לא עבד</p><p class="text-muted">לא היה ברור מי מטפל בכל מייל, ודברים חשובים נפלו בין הכיסאות.</p></li>
       <li><p class="font-bold text-ink">מה שינינו</p><p class="text-muted">כל מייל שייך לפרויקט ולאחראי, עם סדר עדיפויות ברור.</p></li>
@@ -583,9 +588,9 @@
     </ol>
   </div>
   <div id="case-wood">
-    <span class="text-sm font-bold text-[#765a05]">בעל מקצוע, עבודות עץ</span>
+    <span class="font-bold text-[#765a05]">בעל מקצוע, עבודות עץ</span>
     <h3 class="display text-2xl text-primary mt-1 mb-6">מתמחור מהבטן — לדרך קבועה לדעת על מה מרוויחים</h3>
-    <ol class="space-y-4 text-[1.02rem] leading-7">
+    <ol class="space-y-4 text-[1.05rem] leading-7">
       <li><p class="font-bold text-ink">איך זה עבד קודם</p><p class="text-muted">כל הצעת מחיר נבנתה מחדש, מהראש.</p></li>
       <li><p class="font-bold text-ink">מה לא עבד</p><p class="text-muted">לא היה ברור אם עבודה רווחית עד שהיא נגמרה.</p></li>
       <li><p class="font-bold text-ink">מה שינינו</p><p class="text-muted">הגדרנו דרך אחת לתמחר: מרכיבי העלות, הרווח, ותהליך מכירה קבוע מהפנייה ועד ההצעה.</p></li>
@@ -679,18 +684,18 @@
 </section>
 
 <!-- ============ ייעוץ עסקי ============ -->
-<section class="bg-white py-20 md:py-28 px-5 md:px-10">
+<section class="bg-primary text-white py-20 md:py-24 px-5 md:px-10">
   <div class="max-w-[900px] mx-auto text-center">
-    <h2 class="t-h2 text-primary">ייעוץ עסקי שמגיע עד הביצוע.</h2>
-    <p class="lead text-muted mt-5">אנחנו לא מסתפקים בלזהות מה צריך להשתנות.</p>
+    <h2 class="t-h2 text-white">ייעוץ עסקי שמגיע עד הביצוע.</h2>
+    <p class="lead text-white/80 mt-5">אנחנו לא מסתפקים בלזהות מה צריך להשתנות.</p>
     <div class="flex flex-wrap justify-center items-center gap-2 mt-8 text-[1rem]">
-      <span class="chip bg-tealsoft text-primary">נכנסים לעסק</span><svg class="ic !w-4 !h-4 text-slate-400" aria-hidden="true"><use href="#i-arrow"/></svg>
-      <span class="chip bg-tealsoft text-primary">מבינים איך העבודה מתבצעת</span><svg class="ic !w-4 !h-4 text-slate-400" aria-hidden="true"><use href="#i-arrow"/></svg>
-      <span class="chip bg-tealsoft text-primary">מגדירים דרך עבודה טובה יותר</span><svg class="ic !w-4 !h-4 text-slate-400" aria-hidden="true"><use href="#i-arrow"/></svg>
-      <span class="chip bg-tealsoft text-primary">בונים את התשתית שתומכת בה</span><svg class="ic !w-4 !h-4 text-slate-400" aria-hidden="true"><use href="#i-arrow"/></svg>
-      <span class="chip bg-cta/30 text-ink font-bold">מריצים אותה עם הצוות</span>
+      <span class="chip bg-white/10 text-white border border-white/15">נכנסים לעסק</span><svg class="ic !w-4 !h-4 text-white/40" aria-hidden="true"><use href="#i-arrow"/></svg>
+      <span class="chip bg-white/10 text-white border border-white/15">מבינים איך העבודה מתבצעת</span><svg class="ic !w-4 !h-4 text-white/40" aria-hidden="true"><use href="#i-arrow"/></svg>
+      <span class="chip bg-white/10 text-white border border-white/15">מגדירים דרך עבודה טובה יותר</span><svg class="ic !w-4 !h-4 text-white/40" aria-hidden="true"><use href="#i-arrow"/></svg>
+      <span class="chip bg-white/10 text-white border border-white/15">בונים את התשתית שתומכת בה</span><svg class="ic !w-4 !h-4 text-white/40" aria-hidden="true"><use href="#i-arrow"/></svg>
+      <span class="chip bg-cta text-ink font-bold">מריצים אותה עם הצוות</span>
     </div>
-    <p class="display text-2xl md:text-3xl text-primary mt-12">מה שמעניין אותנו בסוף הוא לא מה בנינו.<br class="hidden sm:block"/> אלא איך העסק עובד.</p>
+    <p class="display text-2xl md:text-3xl text-sun mt-12">מה שמעניין אותנו בסוף הוא לא מה בנינו.<br class="hidden sm:block"/> אלא איך העסק עובד.</p>
   </div>
 </section>
 
