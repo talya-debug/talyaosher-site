@@ -77,6 +77,7 @@
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #FFB703; outline-offset: 3px; border-radius: 6px; }
   /* סימון זמני לשם העוזרת עד שיוחלט */
   .ph { background: rgba(255,183,3,.35); border-radius: 4px; padding: 0 .25em; }
+  .bg-teal .ph { background: #7a5800; color: #fff; }
   .ic { width: 1.4rem; height: 1.4rem; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
   /* חלון וואטסאפ של העוזרת */
   .wa { background: #efeae2; }
@@ -84,6 +85,20 @@
   .b-her { background: #fff; border-top-right-radius: .3rem; margin-left: auto; }
   .b-you { background: #d9fdd3; border-top-left-radius: .3rem; margin-right: auto; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  /* טקסט לקוראי מסך בלבד */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  /* קישור "דלג לתוכן" — מופיע רק במקלדת */
+  .skip { position: fixed; top: -100px; right: 1rem; z-index: 200; background: #FFB703; color: #1b1c1a; font-weight: 700; padding: .75rem 1.25rem; border-radius: .75rem; }
+  .skip:focus { top: 1rem; }
+  /* מצבי תפריט הנגישות */
+  html.a11y-big { font-size: 21px; }
+  html.a11y-contrast body, html.a11y-contrast section, html.a11y-contrast header, html.a11y-contrast footer, html.a11y-contrast article, html.a11y-contrast div, html.a11y-contrast p { background: #000 !important; color: #fff !important; border-color: #fff !important; }
+  html.a11y-contrast a, html.a11y-contrast .display, html.a11y-contrast h1, html.a11y-contrast h2, html.a11y-contrast h3 { color: #ffea00 !important; }
+  html.a11y-contrast .btn-main { background: #ffea00 !important; color: #000 !important; }
+  html.a11y-contrast img { filter: grayscale(1) contrast(1.2); }
+  html.a11y-links a { text-decoration: underline !important; text-underline-offset: 3px; }
+  html.a11y-font * { font-family: Arial, sans-serif !important; letter-spacing: .02em; }
+  html.a11y-still *, html.a11y-still *::before, html.a11y-still *::after { transition: none !important; animation: none !important; }
 </style>
 
 <!-- Schema.org -->
@@ -107,6 +122,7 @@
 </script>
 </head>
 <body>
+<a href="#main" class="skip">דלג לתוכן הראשי</a>
 
 <!-- אייקונים (בסגנון Lucide) -->
 <svg width="0" height="0" class="absolute" aria-hidden="true">
@@ -115,6 +131,8 @@
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2Z"/></symbol>
   <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
   <symbol id="i-send" viewBox="0 0 24 24"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M4 8h16"/><path d="M12 8v6"/><path d="m8 21 4-7 4 7"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
 </svg>
 
@@ -131,11 +149,23 @@
       <a href="#cases" class="hover:text-primary">לקוחות</a>
       <a href="#contact" class="hover:text-primary">קביעת שיחה</a>
     </div>
-    <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main hdr-cta !py-2.5 !px-5">ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך</a>
+    <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main hdr-cta !py-2.5 !px-5">ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך<span class="sr-only"> (נפתח בוואטסאפ)</span></a>
+    <!-- כפתור תפריט לטלפון -->
+    <button type="button" id="menu-btn" class="lg:hidden w-12 h-12 rounded-xl grid place-items-center text-primary border border-slate-200" aria-expanded="false" aria-controls="mobile-menu" aria-label="פתיחת תפריט">
+      <svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
   </nav>
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-slate-100 bg-white px-5 pb-5">
+    <ul class="flex flex-col text-lg font-medium text-primary">
+      <li><a href="#system" class="block py-3 border-b border-slate-100">מה זה סיסטם</a></li>
+      <li><a href="#process" class="block py-3 border-b border-slate-100">איך זה עובד</a></li>
+      <li><a href="#cases" class="block py-3 border-b border-slate-100">לקוחות</a></li>
+      <li><a href="#contact" class="block py-3">קביעת שיחה</a></li>
+    </ul>
+  </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <!-- ============ 1. פתיחה + העוזרת ============ -->
 <section id="home" class="bg-primary text-white pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-10">
@@ -145,7 +175,7 @@
       <p class="display text-cta text-3xl md:text-4xl mt-8">אנחנו בונים סיסטמים לעסקים</p>
       <p class="lead text-white/85 mt-3 max-w-xl">כך שהצוות יודע מה לעשות, אתה יודע מה קורה, ורק מה שחריג מגיע אליך.</p>
       <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
-        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg">ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך</a>
+        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg">ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך<span class="sr-only"> (נפתח בוואטסאפ)</span></a>
         <a href="#contact" class="btn-line text-white">קביעת שיחה</a>
       </div>
     </div>
@@ -170,7 +200,7 @@
       </div>
       <!-- שורת הכתיבה היא בעצמה הכפתור לוואטסאפ -->
       <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="flex items-center gap-3 bg-[#f0f2f5] px-4 py-3 group">
-        <span class="flex-1 rounded-full bg-white px-4 py-2.5 text-muted group-hover:text-ink">ספר על העסק שלך — בכתב או בהקלטה</span>
+        <span class="flex-1 rounded-full bg-white px-4 py-2.5 text-muted group-hover:text-ink">ספר על העסק שלך — בכתב או בהקלטה<span class="sr-only"> (נפתח בוואטסאפ)</span></span>
         <span class="w-11 h-11 rounded-full bg-teal text-white grid place-items-center group-hover:bg-primary"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg></span>
       </a>
     </div>
@@ -332,7 +362,7 @@
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mt-20 pt-16 border-t border-white/15">
       <div>
         <h2 class="t-h2">העסק שלך גדל. הדרך שבה הוא עובד צריכה לגדול איתו.</h2>
-        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg mt-8">ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך</a>
+        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg mt-8">ספר ל<span class="ph">[שם העוזרת]</span> על העסק שלך<span class="sr-only"> (נפתח בוואטסאפ)</span></a>
         <div class="mt-8 space-y-1 text-white/80">
           <p>טלפון: <a class="text-white font-medium hover:underline" href="tel:0544407557" dir="ltr">054-4407557</a></p>
           <p>מייל: <a class="text-white font-medium hover:underline" href="mailto:Talya@talyaosher.com">Talya@talyaosher.com</a></p>
@@ -387,26 +417,76 @@
   <div class="max-w-[1200px] mx-auto">
     <nav aria-label="מאמרים" class="flex flex-wrap gap-x-6 gap-y-2 text-[.95rem]">
       <span class="text-white font-bold">מאמרים:</span>
-      <a class="hover:text-sun" href="blog-pricing.html">תמחור לקבלנים</a>
-      <a class="hover:text-sun" href="blog-milestone-payments.html">גבייה לפי אבני דרך</a>
-      <a class="hover:text-sun" href="blog-contractor-quote.html">הצעת מחיר לקבלן</a>
-      <a class="hover:text-sun" href="blog-interior-design-management.html">ניהול משרד עיצוב פנים</a>
-      <a class="hover:text-sun" href="blog-consulting-vs-coaching.html">ייעוץ עסקי מול קואצ'ינג</a>
-      <a class="hover:text-sun" href="blog-management-system-signs.html">5 סימנים שהעסק צריך סדר</a>
-      <a class="hover:text-sun" href="blog-crm-small-business.html">CRM לעסק קטן</a>
+      <a class="hover:text-sun inline-block py-1.5" href="blog-pricing.html">תמחור לקבלנים</a>
+      <a class="hover:text-sun inline-block py-1.5" href="blog-milestone-payments.html">גבייה לפי אבני דרך</a>
+      <a class="hover:text-sun inline-block py-1.5" href="blog-contractor-quote.html">הצעת מחיר לקבלן</a>
+      <a class="hover:text-sun inline-block py-1.5" href="blog-interior-design-management.html">ניהול משרד עיצוב פנים</a>
+      <a class="hover:text-sun inline-block py-1.5" href="blog-consulting-vs-coaching.html">ייעוץ עסקי מול קואצ'ינג</a>
+      <a class="hover:text-sun inline-block py-1.5" href="blog-management-system-signs.html">5 סימנים שהעסק צריך סדר</a>
+      <a class="hover:text-sun inline-block py-1.5" href="blog-crm-small-business.html">CRM לעסק קטן</a>
     </nav>
     <div class="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 pt-6 border-t border-white/10 text-[.95rem]">
       <img src="logo-white.png" alt="טליה אושר" class="h-12 w-auto"/>
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-        <a class="hover:text-sun" href="https://www.linkedin.com/in/talya-osher" target="_blank" rel="noopener noreferrer">לינקדאין</a>
-        <a class="hover:text-sun" href="https://www.instagram.com/talya_osher_a/" target="_blank" rel="noopener noreferrer">אינסטגרם</a>
-        <a class="hover:text-sun" href="#">תנאי שימוש</a>
-        <a class="hover:text-sun" href="#">מדיניות פרטיות</a>
+        <a class="hover:text-sun inline-block py-1.5" href="https://www.linkedin.com/in/talya-osher" target="_blank" rel="noopener noreferrer">לינקדאין</a>
+        <a class="hover:text-sun inline-block py-1.5" href="https://www.instagram.com/talya_osher_a/" target="_blank" rel="noopener noreferrer">אינסטגרם</a>
+        <a class="hover:text-sun inline-block py-1.5" href="accessibility.html">הצהרת נגישות</a>
+        <a class="hover:text-sun inline-block py-1.5" href="#">תנאי שימוש</a>
+        <a class="hover:text-sun inline-block py-1.5" href="#">מדיניות פרטיות</a>
       </div>
       <div>© 2026 טליה אושר</div>
     </div>
   </div>
 </footer>
+
+<!-- תפריט נגישות -->
+<div class="fixed bottom-4 left-4 z-[90]">
+  <button type="button" id="a11y-btn" class="w-14 h-14 rounded-full bg-[#1d4ed8] text-white grid place-items-center shadow-lg" aria-expanded="false" aria-controls="a11y-panel" aria-label="תפריט נגישות">
+    <svg class="ic !w-7 !h-7" aria-hidden="true"><use href="#i-a11y"/></svg>
+  </button>
+  <div id="a11y-panel" class="hidden absolute bottom-16 left-0 w-72 max-w-[calc(100vw-2rem)] bg-white text-ink rounded-2xl shadow-2xl border border-slate-200 p-4" role="group" aria-label="הגדרות נגישות">
+    <p class="font-bold text-lg text-primary mb-2">נגישות</p>
+    <div class="grid gap-2">
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-big" aria-pressed="false">הגדלת טקסט</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-contrast" aria-pressed="false">ניגודיות גבוהה</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-links" aria-pressed="false">הדגשת קישורים</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-font" aria-pressed="false">גופן קריא</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-still" aria-pressed="false">עצירת אנימציות</button>
+      <button type="button" id="a11y-reset" class="text-right rounded-xl bg-slate-100 px-4 py-3 font-medium">איפוס</button>
+      <a href="accessibility.html" class="text-teal font-bold underline px-1 py-2">הצהרת נגישות</a>
+    </div>
+  </div>
+</div>
+<script>
+  // תפריט לטלפון
+  (function () {
+    const btn = document.getElementById('menu-btn'), menu = document.getElementById('mobile-menu');
+    function close() { menu.classList.add('hidden'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'פתיחת תפריט'); }
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      if (open) { close(); return; }
+      menu.classList.remove('hidden'); btn.setAttribute('aria-expanded', 'true'); btn.setAttribute('aria-label', 'סגירת תפריט');
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  })();
+  // תפריט נגישות — הבחירה נשמרת בדפדפן של הגולש
+  (function () {
+    const root = document.documentElement, btn = document.getElementById('a11y-btn'), panel = document.getElementById('a11y-panel');
+    const KEY = 'a11y-prefs';
+    let saved = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+    const opts = document.querySelectorAll('.a11y-opt');
+    function apply() {
+      opts.forEach(o => { const on = saved.includes(o.dataset.cls); root.classList.toggle(o.dataset.cls, on); o.setAttribute('aria-pressed', String(on)); o.style.background = on ? '#e6f2f3' : ''; });
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    }
+    opts.forEach(o => o.addEventListener('click', () => { const c = o.dataset.cls; saved = saved.includes(c) ? saved.filter(x => x !== c) : saved.concat(c); apply(); }));
+    document.getElementById('a11y-reset').addEventListener('click', () => { saved = []; apply(); });
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!open)); panel.classList.toggle('hidden', open); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.classList.contains('hidden')) { panel.classList.add('hidden'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); } });
+    apply();
+  })();
+</script>
 
 </body>
 </html>
