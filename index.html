@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="he">
+<!-- מתג רומי: data-romi="soon" עד שרומי עולה, ואז להחליף ל-data-romi="live" -->
+<html dir="rtl" lang="he" data-romi="soon">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -85,6 +86,9 @@
   .b-her { background: #fff; border-top-right-radius: .3rem; margin-left: auto; }
   .b-you { background: #d9fdd3; border-top-left-radius: .3rem; margin-right: auto; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  /* שתי גרסאות בקובץ אחד — לפי המתג בראש הדף */
+  html[data-romi="soon"] .romi-live { display: none !important; }
+  html[data-romi="live"] .romi-soon { display: none !important; }
   /* טקסט לקוראי מסך בלבד */
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   /* קישור "דלג לתוכן" — מופיע רק במקלדת */
@@ -154,7 +158,7 @@
       <a href="#articles" class="hover:text-primary">מאמרים</a>
       <a href="#contact" class="hover:text-primary">קביעת שיחה</a>
     </div>
-    <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main hdr-cta !py-2.5 !px-5">ספר לרומי על העסק שלך<span class="sr-only"> (נפתח בוואטסאפ)</span></a>
+    <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main hdr-cta !py-2.5 !px-5"><span class="romi-live">ספר לרומי על העסק שלך</span><span class="romi-soon">ספר לנו על העסק שלך בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></a>
     <!-- כפתור תפריט לטלפון -->
     <button type="button" id="menu-btn" class="lg:hidden w-12 h-12 rounded-xl grid place-items-center text-primary border border-slate-200" aria-expanded="false" aria-controls="mobile-menu" aria-label="פתיחת תפריט">
       <svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg>
@@ -181,7 +185,7 @@
       <p class="display text-cta text-3xl md:text-4xl mt-8">אנחנו בונים סיסטמים לעסקים</p>
       <p class="lead text-white/85 mt-3 max-w-xl">כך שהצוות יודע מה לעשות, אתה יודע מה קורה, ורק מה שחריג מגיע אליך.</p>
       <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
-        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg">ספר לרומי על העסק שלך<span class="sr-only"> (נפתח בוואטסאפ)</span></a>
+        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg"><span class="romi-live">ספר לרומי על העסק שלך</span><span class="romi-soon">ספר לנו על העסק שלך בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></a>
         <a href="#contact" class="btn-line text-white">קביעת שיחה</a>
       </div>
     </div>
@@ -191,7 +195,7 @@
       <div class="bg-teal px-5 py-4 flex items-center gap-3">
         <img src="avatar-romi.svg" alt="" class="w-12 h-12 rounded-full ring-2 ring-white/70"/>
         <div>
-          <p class="font-bold text-white leading-tight">רומי</p>
+          <p class="font-bold text-white leading-tight">רומי <span class="romi-soon mr-1 align-middle rounded-full bg-cta text-ink text-[.8rem] font-bold px-2 py-0.5">בקרוב</span></p>
           <p class="text-white/80 text-[.95rem]">העוזרת הדיגיטלית של טליה</p>
         </div>
       </div>
@@ -206,7 +210,7 @@
       </div>
       <!-- שורת הכתיבה היא בעצמה הכפתור לוואטסאפ -->
       <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="flex items-center gap-3 bg-[#f0f2f5] px-4 py-3 group">
-        <span class="flex-1 rounded-full bg-white px-4 py-2.5 text-muted group-hover:text-ink">ספר על העסק שלך — בכתב או בהקלטה<span class="sr-only"> (נפתח בוואטסאפ)</span></span>
+        <span class="flex-1 rounded-full bg-white px-4 py-2.5 text-muted group-hover:text-ink"><span class="romi-live">ספר על העסק שלך — בכתב או בהקלטה</span><span class="romi-soon">בינתיים, ספר לנו ישירות בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></span>
         <span class="w-11 h-11 rounded-full bg-teal text-white grid place-items-center group-hover:bg-primary"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg></span>
       </a>
     </div>
@@ -380,7 +384,7 @@
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mt-20 pt-16 border-t border-white/15">
       <div>
         <h2 class="t-h2">העסק שלך גדל. הדרך שבה הוא עובד צריכה לגדול איתו.</h2>
-        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg mt-8">ספר לרומי על העסק שלך<span class="sr-only"> (נפתח בוואטסאפ)</span></a>
+        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg mt-8"><span class="romi-live">ספר לרומי על העסק שלך</span><span class="romi-soon">ספר לנו על העסק שלך בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></a>
       </div>
       <div class="bg-white text-ink p-7 md:p-9 rounded-3xl">
         <h3 class="display text-2xl text-primary">קביעת שיחה</h3>
