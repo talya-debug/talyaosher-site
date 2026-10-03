@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="he">
+<!-- מתג רומי: data-romi="soon" עד שרומי עולה, ואז להחליף ל-data-romi="live" -->
+<html dir="rtl" lang="he" data-romi="soon">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -14,188 +15,468 @@
 </script>
 
 <!-- SEO -->
-<title>מערכת ניהול לקבלנים — תמחור, גבייה ומעקב פרויקטים | טליה אושר</title>
-<meta name="description" content="מערכת ניהול מותאמת אישית לקבלני שיפוצים ובנייה — כתב כמויות, תמחור מדויק, גבייה לפי אבני דרך ומעקב פרויקטים במקום אחד. ייעוץ ובנייה מותאמת לעסק שלך."/>
-<meta name="keywords" content="מערכת ניהול לקבלנים, תוכנה לקבלני שיפוצים, ניהול פרויקטים בבנייה, כתב כמויות, גבייה לפי אבני דרך, תמחור לקבלנים"/>
+<title>לא עוד מערכת ניהול לקבלנים — סיסטם שעובד בשטח | טליה אושר</title>
+<meta name="description" content="לקבלני שיפוצים ובנייה: מגדירים יחד מי אחראי על מה בכל פרויקט, מתי גובים ומה נחשב חריג, ובונים סביב זה את הכלים. אתה יודע מה קורה בכל אתר בלי להתקשר לאף אחד."/>
+<meta name="keywords" content="מערכת ניהול לקבלנים, ניהול פרויקטים לקבלנים, ניהול פרויקטים בבנייה, גבייה לפי אבני דרך, תמחור לקבלנים, כתב כמויות, ייעוץ עסקי לקבלנים, סיסטם לקבלן"/>
+<meta name="author" content="טליה אושר"/>
 <link rel="canonical" href="https://talyaosher.com/contractors.html"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="מערכת ניהול לקבלנים — תמחור, גבייה ומעקב פרויקטים"/>
-<meta property="og:description" content="מערכת מותאמת אישית לקבלני שיפוצים ובנייה — כתב כמויות, תמחור, גבייה ומעקב פרויקטים."/>
+<meta property="og:title" content="לא עוד מערכת ניהול לקבלנים — סיסטם שעובד בשטח"/>
+<meta property="og:description" content="כל אתר פתוח עדיין עובר דרך הטלפון שלך? אנחנו בונים לקבלנים סיסטם שעובד בשטח."/>
 <meta property="og:url" content="https://talyaosher.com/contractors.html"/>
-<meta property="og:site_name" content="טליה אושר — בונים תשתיות לעסקים"/>
-<meta property="og:image" content="https://talyaosher.com/logo.png"/>
+<meta property="og:site_name" content="טליה אושר"/>
+<meta property="og:image" content="https://talyaosher.com/logo-teal.png"/>
 <meta property="og:locale" content="he_IL"/>
 
-<!-- Twitter -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="מערכת ניהול לקבלנים — טליה אושר"/>
-<meta name="twitter:description" content="מערכת מותאמת אישית לקבלני שיפוצים ובנייה."/>
-<meta name="twitter:image" content="https://talyaosher.com/logo.png"/>
-
-<!-- Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "מערכת ניהול לקבלנים",
-  "provider": {
-    "@type": "ProfessionalService",
-    "name": "טליה אושר — בונים תשתיות לעסקים",
-    "url": "https://talyaosher.com",
-    "telephone": "+972-54-4407557",
-    "areaServed": "IL"
-  },
-  "audience": {
-    "@type": "BusinessAudience",
-    "audienceType": "קבלני שיפוצים ובנייה"
-  },
-  "description": "בנייה והטמעה של מערכת ניהול מותאמת לקבלנים — תמחור, כתב כמויות, גבייה ומעקב פרויקטים.",
-  "url": "https://talyaosher.com/contractors.html"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "דף הבית", "item": "https://talyaosher.com/"},
-    {"@type": "ListItem", "position": 2, "name": "מערכת ניהול לקבלנים", "item": "https://talyaosher.com/contractors.html"}
-  ]
-}
-</script>
+<meta name="twitter:title" content="לא עוד מערכת ניהול לקבלנים — סיסטם שעובד בשטח"/>
+<meta name="twitter:description" content="הצוות יודע מה לעשות. אתה יודע מה קורה. ורק מה שחריג מגיע אליך."/>
+<meta name="twitter:image" content="https://talyaosher.com/logo-teal.png"/>
 
 <link rel="icon" type="image/png" href="logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Secular+One&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script>
+  // צבעי המותג — צבעים מלאים, בלי גוונים חיוורים
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: "#00535b",
+          deep: "#003c42",
+          teal: "#006D77",
+          sun: "#E9C46A",
+          cta: "#FFB703",
+          ink: "#1b1c1a",
+          muted: "#3e494a"
+        }
+      }
+    }
+  }
+</script>
 <style>
-  * { font-family: 'Heebo', sans-serif !important; }
-  body { background-color: #faf9f5; color: #1b1c1a; }
+  html { font-size: 17px; }
+  body { font-family: 'Heebo', sans-serif; background: #fff; color: #1b1c1a; line-height: 1.65; }
+  h1, h2, .display { font-family: 'Secular One', 'Heebo', sans-serif; font-weight: 400; text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  .t-display { font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.12; }
+  .t-h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); line-height: 1.15; }
+  .lead { font-size: 1.2rem; line-height: 1.65; }
+  /* כפתורים */
+  .btn-main { max-width: 100%; flex-wrap: wrap; background: #FFB703; color: #1b1c1a; font-weight: 700; border-radius: 999px; padding: .95rem 1.9rem; display: inline-flex; gap: .5rem; align-items: center; justify-content: center; text-align: center; transition: background-color .15s, transform .15s; cursor: pointer; }
+  .btn-main:hover { background: #ffc933; }
+  .btn-main:active { transform: scale(.98); }
+  .btn-line { max-width: 100%; border: 2px solid currentColor; font-weight: 700; border-radius: 999px; padding: .85rem 1.7rem; display: inline-flex; align-items: center; justify-content: center; transition: background-color .15s; cursor: pointer; }
+  .btn-line:hover { background: rgba(255,255,255,.08); }
+  .btn-main.hdr-cta { display: none; }
+  @media (min-width: 640px) { .btn-main.hdr-cta { display: inline-flex; } }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #FFB703; outline-offset: 3px; border-radius: 6px; }
+  /* סימון (לא בשימוש כרגע) */
+  .ph { background: rgba(255,183,3,.35); border-radius: 4px; padding: 0 .25em; }
+  .bg-teal .ph { background: #7a5800; color: #fff; }
+  .ic { width: 1.4rem; height: 1.4rem; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  /* חלון וואטסאפ של העוזרת */
+  .wa { background: #efeae2; }
+  .bubble { border-radius: 1rem; padding: .7rem 1rem; max-width: 86%; font-size: 1.02rem; line-height: 1.5; color: #1b1c1a; box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+  .b-her { background: #fff; border-top-right-radius: .3rem; margin-left: auto; }
+  .b-you { background: #d9fdd3; border-top-left-radius: .3rem; margin-right: auto; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  /* שתי גרסאות בקובץ אחד — לפי המתג בראש הדף */
+  html[data-romi="soon"] .romi-live { display: none !important; }
+  html[data-romi="live"] .romi-soon { display: none !important; }
+  /* טקסט לקוראי מסך בלבד */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  /* קישור "דלג לתוכן" — מופיע רק במקלדת */
+  .skip { position: fixed; top: -100px; right: 1rem; z-index: 200; background: #FFB703; color: #1b1c1a; font-weight: 700; padding: .75rem 1.25rem; border-radius: .75rem; }
+  .skip:focus { top: 1rem; }
+  /* מצבי תפריט הנגישות */
+  html.a11y-big { font-size: 21px; }
+  html.a11y-contrast body, html.a11y-contrast section, html.a11y-contrast header, html.a11y-contrast footer, html.a11y-contrast article, html.a11y-contrast div, html.a11y-contrast p { background: #000 !important; color: #fff !important; border-color: #fff !important; }
+  html.a11y-contrast a, html.a11y-contrast .display, html.a11y-contrast h1, html.a11y-contrast h2, html.a11y-contrast h3 { color: #ffea00 !important; }
+  html.a11y-contrast .btn-main { background: #ffea00 !important; color: #000 !important; }
+  html.a11y-contrast img { filter: grayscale(1) contrast(1.2); }
+  html.a11y-links a { text-decoration: underline !important; text-underline-offset: 3px; }
+  html.a11y-font * { font-family: Arial, sans-serif !important; letter-spacing: .02em; }
+  html.a11y-still *, html.a11y-still *::before, html.a11y-still *::after { transition: none !important; animation: none !important; }
 </style>
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "סיסטם לקבלנים — ניהול פרויקטים, תמחור וגבייה",
+      "serviceType": "ייעוץ עסקי ובניית סיסטם לקבלני שיפוצים ובנייה",
+      "description": "לקבלני שיפוצים ובנייה: מגדירים יחד מי אחראי על מה בכל פרויקט, מתי גובים ומה נחשב חריג, ובונים סביב זה את הכלים. אתה יודע מה קורה בכל אתר בלי להתקשר לאף אחד.",
+      "provider": {"@type": "ProfessionalService", "name": "טליה אושר", "url": "https://talyaosher.com", "telephone": "+972-54-4407557"},
+      "areaServed": {"@type": "Country", "name": "Israel"},
+      "url": "https://talyaosher.com/contractors.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "דף הבית", "item": "https://talyaosher.com/"},
+        {"@type": "ListItem", "position": 2, "name": "לקבלנים", "item": "https://talyaosher.com/contractors.html"}
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<a href="#main" class="skip">דלג לתוכן הראשי</a>
 
-<!-- כותרת עליונה -->
-<header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
-<nav class="flex flex-row-reverse justify-between items-center px-6 md:px-16 py-4 max-w-[1280px] mx-auto">
-<a href="/"><img src="logo.png" alt="טליה אושר" style="height: 50px;"/></a>
-<a href="/" class="text-[#006D77] font-semibold hover:opacity-80">← חזרה לאתר</a>
-</nav>
+<!-- אייקונים (בסגנון Lucide) -->
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2Z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-a11y" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M4 8h16"/><path d="M12 8v6"/><path d="m8 21 4-7 4 7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+</svg>
+
+<!-- תפריט עליון -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white border-b border-slate-100">
+  <nav class="max-w-[1200px] mx-auto flex items-center justify-between gap-6 px-5 md:px-10 py-3">
+    <a href="index.html#home" class="shrink-0 flex items-center gap-3" aria-label="טליה אושר — לראש הדף">
+      <img src="logo-t-teal.png" alt="" class="h-10 w-auto"/>
+      <span class="text-teal text-[1.05rem] tracking-[.18em] font-medium" dir="ltr">TALYA OSHER</span>
+    </a>
+    <div class="hidden lg:flex items-center gap-8 font-medium text-muted">
+      <a href="index.html#system" class="hover:text-primary">מה זה סיסטם</a>
+      <a href="index.html#process" class="hover:text-primary">איך זה עובד</a>
+      <a href="index.html#cases" class="hover:text-primary">לקוחות</a>
+      <a href="index.html#articles" class="hover:text-primary">מאמרים</a>
+      <a href="#contact" class="hover:text-primary">קביעת שיחה</a>
+    </div>
+    <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main hdr-cta !py-2.5 !px-5"><span class="romi-live">ספר לרומי על העסק שלך</span><span class="romi-soon">ספר לנו על העסק שלך בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></a>
+    <!-- כפתור תפריט לטלפון -->
+    <button type="button" id="menu-btn" class="lg:hidden w-12 h-12 rounded-xl grid place-items-center text-primary border border-slate-200" aria-expanded="false" aria-controls="mobile-menu" aria-label="פתיחת תפריט">
+      <svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-slate-100 bg-white px-5 pb-5">
+    <ul class="flex flex-col text-lg font-medium text-primary">
+      <li><a href="index.html#system" class="block py-3 border-b border-slate-100">מה זה סיסטם</a></li>
+      <li><a href="index.html#process" class="block py-3 border-b border-slate-100">איך זה עובד</a></li>
+      <li><a href="index.html#cases" class="block py-3 border-b border-slate-100">לקוחות</a></li>
+      <li><a href="index.html#articles" class="block py-3 border-b border-slate-100">מאמרים</a></li>
+      <li><a href="#contact" class="block py-3">קביעת שיחה</a></li>
+    </ul>
+  </div>
 </header>
 
-<!-- Hero -->
-<section class="pt-32 pb-16 px-6 md:px-16 max-w-[1100px] mx-auto text-center">
-<span class="inline-block bg-[#FFB703]/20 text-[#8a5a00] text-sm font-semibold px-4 py-2 rounded-full mb-6">לקבלני שיפוצים ובנייה</span>
-<h1 class="text-4xl md:text-6xl font-bold text-[#00535b] leading-tight mb-6">מערכת ניהול שמתאימה לדרך שאתה עובד</h1>
-<p class="text-xl text-gray-700 mb-8 max-w-[750px] mx-auto leading-relaxed">תמחור מדויק, כתב כמויות, גבייה לפי אבני דרך ומעקב פרויקטים — הכל במקום אחד, בנוי בהתאמה אישית לקבלן ולא לאקסל גנרי.</p>
-<a href="https://wa.me/972544407557" class="inline-block bg-[#FFB703] text-[#1b1c1a] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#ffc933] hover:shadow-lg transition-all shadow-md">בואו נדבר בוואטסאפ</a>
+<main id="main" tabindex="-1">
+
+<!-- ============ 1. פתיחה ============ -->
+<section id="home" class="bg-primary text-white pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-10">
+  <div class="max-w-[1200px] mx-auto grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
+    <div>
+      <nav aria-label="פירורי לחם" class="text-white/70 text-[.95rem]"><a href="index.html" class="hover:text-white underline underline-offset-4">דף הבית</a> <span aria-hidden="true">/</span> לקבלנים</nav>
+      <p class="inline-block mt-5 rounded-full bg-sun px-4 py-1.5 font-bold text-ink">לקבלני שיפוצים ובנייה</p>
+      <h1 class="t-display mt-5">כל אתר פתוח עדיין עובר דרך הטלפון שלך?</h1>
+      <p class="lead text-white/85 mt-6 max-w-xl"><span class="text-cta font-bold">אנחנו בונים לקבלנים סיסטם:</span> מי אחראי על מה בכל פרויקט, מתי גובים, ומה נחשב חריג. כך הצוות מתקדם לבד, אתה יודע מה קורה בכל אתר, ורק מה שחריג מגיע אליך.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
+        <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg "><span class="romi-live">ספר לרומי על העסק שלך</span><span class="romi-soon">ספר לנו על העסק שלך בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></a>
+        <a href="#contact" class="btn-line text-white">קביעת שיחה</a>
+      </div>
+    </div>
+
+    <!-- העוזרת הדיגיטלית — ההדגמה החיה של הסיסטם -->
+    <div class="rounded-[1.75rem] overflow-hidden shadow-[0_40px_80px_-30px_rgba(0,0,0,.6)] bg-white">
+      <div class="bg-teal px-5 py-4 flex items-center gap-3">
+        <img src="avatar-romi.svg" alt="" class="w-12 h-12 rounded-full ring-2 ring-white/70"/>
+        <div>
+          <p class="font-bold text-white leading-tight">רומי <span class="romi-soon mr-1 align-middle rounded-full bg-cta text-ink text-[.8rem] font-bold px-2 py-0.5">בקרוב</span></p>
+          <p class="text-white/80 text-[.95rem]">העוזרת הדיגיטלית של טליה</p>
+        </div>
+      </div>
+      <div class="wa p-5 space-y-2.5">
+        <p class="bubble b-her">היי, ספר לי על העסק שלך. אפשר לכתוב, ואפשר להקליט.</p>
+        <div class="bubble b-you flex items-center gap-3 !max-w-[72%]">
+          <svg class="ic text-teal" aria-hidden="true"><use href="#i-mic"/></svg>
+          <span class="flex-1 h-1.5 rounded-full bg-teal/35"></span>
+          <span class="text-muted text-[.95rem]">0:48</span>
+        </div>
+        <p class="bubble b-her">תודה. ואיך אתה יודע היום איפה כל פרויקט עומד?</p>
+      </div>
+      <!-- שורת הכתיבה היא בעצמה הכפתור לוואטסאפ -->
+      <a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="flex items-center gap-3 bg-[#f0f2f5] px-4 py-3 group">
+        <span class="flex-1 rounded-full bg-white px-4 py-2.5 text-muted group-hover:text-ink"><span class="romi-live">ספר על העסק שלך — בכתב או בהקלטה</span><span class="romi-soon">בינתיים, ספר לנו ישירות בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></span>
+        <span class="w-11 h-11 rounded-full bg-teal text-white grid place-items-center group-hover:bg-primary"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg></span>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- הבעיה -->
-<section class="py-16 px-6 md:px-16 max-w-[1000px] mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-[#00535b] mb-8 text-center">למה רוב הקבלנים מפסידים כסף בלי לדעת</h2>
-<div class="grid md:grid-cols-3 gap-6">
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-<div class="w-14 h-14 rounded-full bg-[#FFB703]/20 flex items-center justify-center text-3xl mb-4">📊</div>
-<h3 class="text-lg font-bold text-[#00535b] mb-2">תמחור "מהבטן"</h3>
-<p class="text-gray-700">בלי כתב כמויות מסודר, כל הצעת מחיר היא ניחוש. לפעמים מרוויחים, לפעמים מפסידים — ואין דרך לדעת מראש.</p>
-</div>
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-<div class="w-14 h-14 rounded-full bg-[#E9C46A]/30 flex items-center justify-center text-3xl mb-4">💸</div>
-<h3 class="text-lg font-bold text-[#00535b] mb-2">גבייה שנופלת בין הכיסאות</h3>
-<p class="text-gray-700">תשלומים שנשכחים, אבני דרך שלא מתועדות, לקוחות שמתעכבים — והעסק מממן את עצמו במקום הלקוח.</p>
-</div>
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-<div class="w-14 h-14 rounded-full bg-[#006D77]/15 flex items-center justify-center text-3xl mb-4">📁</div>
-<h3 class="text-lg font-bold text-[#00535b] mb-2">פרויקטים בלי מעקב</h3>
-<p class="text-gray-700">פרויקטים בוואטסאפ, הצעות מחיר באקסל, ספקים בפתקים. אין תמונה אחת ברורה של מה קורה בעסק.</p>
-</div>
-</div>
+<!-- ============ 2. איפה זה נתקע ============ -->
+<section class="py-20 md:py-24 px-5 md:px-10 bg-[#f4f6f6]">
+  <div class="max-w-[1200px] mx-auto">
+    <h2 class="t-h2 text-primary text-center">איפה זה נתקע אצל קבלנים</h2>
+    <div class="grid md:grid-cols-3 gap-5 mt-12">
+      <div class="rounded-3xl bg-white border border-slate-200 p-7">
+        <h3 class="display text-2xl text-primary">המחיר כתוב, הביצוע לא.</h3>
+        <p class="text-muted text-[1.08rem] mt-3">הצעת המחיר יצאה, אבל אף אחד לא יודע כמה זה עלה בפועל. הרווח מתגלה, או נעלם, רק בסוף.</p>
+      </div>
+      <div class="rounded-3xl bg-white border border-slate-200 p-7">
+        <h3 class="display text-2xl text-primary">כסף שנשאר בשטח.</h3>
+        <p class="text-muted text-[1.08rem] mt-3">אבן הדרך הגיעה, החשבונית לא יצאה. הלקוח לא ממהר, ואתה מממן לו את הפרויקט.</p>
+      </div>
+      <div class="rounded-3xl bg-white border border-slate-200 p-7">
+        <h3 class="display text-2xl text-primary">הכל בוואטסאפ.</h3>
+        <p class="text-muted text-[1.08rem] mt-3">ספקים, קבלני משנה, לקוחות ומנהלי עבודה, בעשר קבוצות שונות. כדי לדעת מה קורה, אתה מתקשר.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- הפתרון -->
-<section class="py-16 px-6 md:px-16 bg-white">
-<div class="max-w-[1000px] mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-[#00535b] mb-12 text-center">מה כוללת המערכת</h2>
-<div class="space-y-6">
-<div class="bg-gradient-to-l from-[#FFB703]/10 to-[#E9C46A]/15 rounded-2xl p-8 border-r-4 border-[#FFB703]">
-<h3 class="text-xl font-bold text-[#00535b] mb-3">1. כתב כמויות וקטלוג מחירים</h3>
-<p class="text-gray-700 leading-relaxed">קטלוג עבודות וחומרים מותאם אישית לסוג העבודות שלך — ריצוף, חשמל, גבס, אינסטלציה. כל הצעת מחיר נבנית ממנו תוך דקות, עם עלויות אמיתיות ולא ניחושים.</p>
-</div>
-<div class="bg-gradient-to-l from-[#FFB703]/10 to-[#E9C46A]/15 rounded-2xl p-8 border-r-4 border-[#FFB703]">
-<h3 class="text-xl font-bold text-[#00535b] mb-3">2. הצעות מחיר מקצועיות</h3>
-<p class="text-gray-700 leading-relaxed">הצעות מחיר ממותגות עם פירוט מלא, תנאי תשלום ואבני דרך. נשלחות ללקוח בלחיצה, מתועדות במערכת, ואפשר לעקוב אם נפתחו ואושרו.</p>
-</div>
-<div class="bg-gradient-to-l from-[#FFB703]/10 to-[#E9C46A]/15 rounded-2xl p-8 border-r-4 border-[#FFB703]">
-<h3 class="text-xl font-bold text-[#00535b] mb-3">3. גבייה לפי אבני דרך</h3>
-<p class="text-gray-700 leading-relaxed">תזרים תשלומים מובנה — מקדמה, אבני דרך מקצועיות, סיום. המערכת מזכירה אוטומטית מה צריך לגבות, מתי, וממי. בלי "שכחתי לבקש כסף".</p>
-</div>
-<div class="bg-gradient-to-l from-[#FFB703]/10 to-[#E9C46A]/15 rounded-2xl p-8 border-r-4 border-[#FFB703]">
-<h3 class="text-xl font-bold text-[#00535b] mb-3">4. ניהול ספקים וקבלני משנה</h3>
-<p class="text-gray-700 leading-relaxed">פנקס ספקים, הזמנות עבודה, מעקב תשלומים והתאמה לפרויקט. יודעים בדיוק כמה כל פרויקט עולה — לא רק כמה הוא מכניס.</p>
-</div>
-<div class="bg-gradient-to-l from-[#FFB703]/10 to-[#E9C46A]/15 rounded-2xl p-8 border-r-4 border-[#FFB703]">
-<h3 class="text-xl font-bold text-[#00535b] mb-3">5. דשבורד פרויקטים</h3>
-<p class="text-gray-700 leading-relaxed">תמונה אחת של כל הפרויקטים הפעילים — באיזה שלב, מה נגבה, מה תקוע. כדי שתדעו לאן הולך הזמן והכסף שלכם.</p>
-</div>
-</div>
-</div>
+<!-- ============ 3. מה אנחנו בונים לקבלן ============ -->
+<section id="system" class="bg-primary text-white py-20 md:py-28 px-5 md:px-10">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="font-bold text-sun">מה אנחנו בונים לקבלן</p>
+      <h2 class="t-h2 mt-2">קודם מסכימים איך עובדים. רק אחר כך בונים את הכלים.</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5 mt-12">
+      <div class="rounded-3xl bg-white/[.07] border border-white/10 p-7">
+        <span class="w-14 h-14 rounded-2xl bg-cta text-ink grid place-items-center"><svg class="ic !w-7 !h-7" aria-hidden="true"><use href="#i-list"/></svg></span>
+        <h3 class="display text-2xl mt-5">שלבי פרויקט ברורים</h3>
+        <p class="text-white/80 text-[1.08rem] mt-2">מהפנייה הראשונה ועד המסירה. מה כל שלב, מי אחראי, ומתי הוא גמור.</p>
+      </div>
+      <div class="rounded-3xl bg-white/[.07] border border-white/10 p-7">
+        <span class="w-14 h-14 rounded-2xl bg-cta text-ink grid place-items-center"><svg class="ic !w-7 !h-7" aria-hidden="true"><use href="#i-link"/></svg></span>
+        <h3 class="display text-2xl mt-5">תמחור לפי כתב כמויות</h3>
+        <p class="text-white/80 text-[1.08rem] mt-2">המחירון שלך, כך שכל הצעה נבנית באותו היגיון, והרווח ידוע לפני שהיא יוצאת.</p>
+      </div>
+      <div class="rounded-3xl bg-white/[.07] border border-white/10 p-7">
+        <span class="w-14 h-14 rounded-2xl bg-cta text-ink grid place-items-center"><svg class="ic !w-7 !h-7" aria-hidden="true"><use href="#i-spark"/></svg></span>
+        <h3 class="display text-2xl mt-5">גבייה לפי אבני דרך</h3>
+        <p class="text-white/80 text-[1.08rem] mt-2">כל אבן דרך מחוברת לתשלום. כשהיא מגיעה, מי שצריך לדעת יודע.</p>
+      </div>
+      <div class="rounded-3xl bg-white/[.07] border border-white/10 p-7">
+        <span class="w-14 h-14 rounded-2xl bg-cta text-ink grid place-items-center"><svg class="ic !w-7 !h-7" aria-hidden="true"><use href="#i-chat"/></svg></span>
+        <h3 class="display text-2xl mt-5">תמונת מצב של כל האתרים</h3>
+        <p class="text-white/80 text-[1.08rem] mt-2">איפה כל פרויקט עומד, מה תקוע ומה מחכה לך, בלי להתקשר לאף אחד.</p>
+      </div>
+    </div>
+    <p class="display text-xl md:text-2xl text-sun text-center mt-12">הוואטסאפ, החשבוניות והקבצים נשארים איפה שהם. אנחנו מחברים את מה שצריך.</p>
+  </div>
 </section>
 
-<!-- למי זה מתאים -->
-<section class="py-16 px-6 md:px-16 max-w-[1000px] mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-[#00535b] mb-8 text-center">למי זה מתאים</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="bg-white rounded-2xl p-6 border border-gray-100">
-<h3 class="text-lg font-bold text-[#00535b] mb-2"><span class="text-[#FFB703]">✓</span> קבלני שיפוצים</h3>
-<p class="text-gray-700">שמטפלים ב-3 פרויקטים ומעלה במקביל וצריכים סדר.</p>
-</div>
-<div class="bg-white rounded-2xl p-6 border border-gray-100">
-<h3 class="text-lg font-bold text-[#00535b] mb-2"><span class="text-[#FFB703]">✓</span> קבלני בנייה קלה</h3>
-<p class="text-gray-700">פרגולות, דקים, גגות, גבס — עם כתבי כמויות מורכבים.</p>
-</div>
-<div class="bg-white rounded-2xl p-6 border border-gray-100">
-<h3 class="text-lg font-bold text-[#00535b] mb-2"><span class="text-[#FFB703]">✓</span> בעלי מקצוע עצמאיים</h3>
-<p class="text-gray-700">חשמלאים, אינסטלטורים, רצפים — שרוצים להיראות מקצועיים.</p>
-</div>
-<div class="bg-white rounded-2xl p-6 border border-gray-100">
-<h3 class="text-lg font-bold text-[#00535b] mb-2"><span class="text-[#FFB703]">✓</span> קבלני משנה</h3>
-<p class="text-gray-700">שעובדים מול מספר קבלנים ראשיים וצריכים מעקב הזמנות.</p>
-</div>
-</div>
+<!-- ============ 4. מה השתנה אצל קבלן ============ -->
+<section id="cases" class="py-20 md:py-24 px-5 md:px-10">
+  <div class="max-w-[1000px] mx-auto">
+    <h2 class="t-h2 text-primary text-center">מה השתנה אצל קבלן</h2>
+    <article class="mt-10 rounded-3xl overflow-hidden bg-white border border-slate-200 grid md:grid-cols-2">
+      <div class="bg-[#e9eef0] p-5 flex items-center justify-center"><img class="max-w-full rounded-lg shadow-sm" loading="lazy" src="case-contractor.png" alt="לוח פרויקטים של קבלן ביצוע"/></div>
+      <div class="p-7 md:p-8">
+        <p class="font-bold text-teal">קבלן ביצוע</p>
+        <h3 class="display text-2xl text-primary mt-1">מניהול פרויקטים מהראש ובוואטסאפ — לתמונת מצב שאפשר לעבוד איתה</h3>
+        <dl class="mt-5 space-y-3 text-[1.05rem]">
+          <div class="flex gap-3"><dt class="w-14 shrink-0 font-bold text-slate-500">קודם</dt><dd class="text-muted">פרויקטים ותשלומים בראש של בעל העסק ובוואטסאפ.</dd></div>
+          <div class="flex gap-3"><dt class="w-14 shrink-0 font-bold text-teal">היום</dt><dd class="text-ink font-medium">רואים במקום אחד איפה כל פרויקט עומד ואיזה תשלום מגיע.</dd></div>
+        </dl>
+      </div>
+    </article>
+  </div>
 </section>
 
-<!-- מאמר קשור -->
-<section class="py-12 px-6 md:px-16 max-w-[800px] mx-auto">
-<div class="bg-[#E9C46A]/20 rounded-2xl p-8 text-center border-2 border-[#E9C46A]/40">
-<p class="text-sm text-[#8a5a00] font-semibold mb-2">📖 מאמר מומלץ</p>
-<h3 class="text-2xl font-bold text-[#00535b] mb-3">למה קבלנים מפסידים כסף — ואיך תמחור נכון משנה את התמונה</h3>
-<a href="blog-pricing.html" class="inline-block text-[#006D77] font-semibold hover:underline">קרא את המאמר ←</a>
-</div>
+<!-- ============ 5. למי זה מתאים ============ -->
+<section class="bg-[#f4f6f6] py-20 md:py-24 px-5 md:px-10">
+  <div class="max-w-[1000px] mx-auto text-center">
+    <h2 class="t-h2 text-primary">למי זה מתאים</h2>
+    <ul class="flex flex-wrap justify-center gap-3 mt-10 text-[1.05rem]">
+      <li class="rounded-full bg-white border border-slate-200 px-5 py-3 font-medium">קבלני שיפוצים עם כמה פרויקטים במקביל</li>
+      <li class="rounded-full bg-white border border-slate-200 px-5 py-3 font-medium">קבלני בנייה קלה: פרגולות, דקים, גגות, גבס</li>
+      <li class="rounded-full bg-white border border-slate-200 px-5 py-3 font-medium">קבלני משנה שעובדים מול כמה קבלנים ראשיים</li>
+      <li class="rounded-full bg-white border border-slate-200 px-5 py-3 font-medium">בעלי מקצוע עם צוות: חשמל, אינסטלציה, ריצוף</li>
+    </ul>
+  </div>
 </section>
 
-<!-- CTA -->
-<section class="py-16 px-6 md:px-16 max-w-[900px] mx-auto">
-<div class="bg-gradient-to-br from-[#006D77] to-[#00535b] text-white rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
-<div class="absolute top-0 left-0 w-32 h-32 bg-[#FFB703]/20 rounded-full -translate-x-12 -translate-y-12"></div>
-<div class="absolute bottom-0 right-0 w-40 h-40 bg-[#E9C46A]/15 rounded-full translate-x-16 translate-y-16"></div>
-<div class="relative">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">בואו נבנה לך מערכת שמתאימה לעסק שלך</h2>
-<p class="text-lg opacity-90 mb-8 max-w-[600px] mx-auto">פגישת ייעוץ ראשונית — אני אבין את הדרך שאתה עובד ונחליט יחד מה הכי משתלם לבנות לך.</p>
-<a href="https://wa.me/972544407557" class="inline-block bg-[#FFB703] text-[#1b1c1a] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#ffc933] hover:shadow-xl transition-all shadow-lg">בואו נדבר בוואטסאפ</a>
-<p class="text-sm opacity-75 mt-4">או חייגו 054-4407557</p>
-</div>
-</div>
+<!-- ============ 4. איך ============ -->
+<section id="process" class="py-20 md:py-28 px-5 md:px-10">
+  <div class="max-w-[1200px] mx-auto">
+    <h2 class="t-h2 text-primary text-center">איך זה עובד</h2>
+    <!-- 4 שלבים: קו אחד שמחבר ביניהם במחשב, רשימה אנכית בטלפון -->
+    <ol class="relative grid md:grid-cols-4 gap-10 md:gap-6 mt-14">
+      <span class="hidden md:block absolute top-7 right-[12.5%] left-[12.5%] h-0.5 bg-teal/25" aria-hidden="true"></span>
+      <li class="relative flex md:block gap-5 md:text-center">
+        <span class="relative z-10 w-14 h-14 shrink-0 md:mx-auto rounded-full bg-cta text-ink grid place-items-center display text-2xl">1</span>
+        <div><h3 class="display text-2xl text-primary md:mt-5">שיחה</h3><p class="text-muted text-[1.08rem] mt-2">מספרים לנו על העסק, בכתב או בהקלטה.</p></div>
+      </li>
+      <li class="relative flex md:block gap-5 md:text-center">
+        <span class="relative z-10 w-14 h-14 shrink-0 md:mx-auto rounded-full bg-teal text-white grid place-items-center display text-2xl">2</span>
+        <div><h3 class="display text-2xl text-primary md:mt-5">מיפוי</h3><p class="text-muted text-[1.08rem] mt-2">נכנסים לעבודה עצמה ויוצאים עם תוכנית: מה משנים, מה בונים, באיזה סדר ומי אחראי.</p></div>
+      </li>
+      <li class="relative flex md:block gap-5 md:text-center">
+        <span class="relative z-10 w-14 h-14 shrink-0 md:mx-auto rounded-full bg-teal text-white grid place-items-center display text-2xl">3</span>
+        <div><h3 class="display text-2xl text-primary md:mt-5">בנייה והטמעה</h3><p class="text-muted text-[1.08rem] mt-2">בונים את הסיסטם יחד עם הצוות, בתוך העבודה עצמה.</p></div>
+      </li>
+      <li class="relative flex md:block gap-5 md:text-center">
+        <span class="relative z-10 w-14 h-14 shrink-0 md:mx-auto rounded-full bg-teal text-white grid place-items-center display text-2xl">4</span>
+        <div><h3 class="display text-2xl text-primary md:mt-5">הרצה ושיפור</h3><p class="text-muted text-[1.08rem] mt-2">עובדים לפיו, בודקים מה השתנה ומדייקים.</p></div>
+      </li>
+    </ol>
+  </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-[#006D77] w-full py-8 px-6 text-center">
-<div class="text-white/70 text-sm">© 2026 טליה אושר. כל הזכויות שמורות.</div>
+
+<!-- ============ 6. מאמרים לקבלנים ============ -->
+<section id="articles" class="bg-[#f4f6f6] py-20 md:py-24 px-5 md:px-10">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <h2 class="t-h2 text-primary">מאמרים לקבלנים</h2>
+      <a href="blog.html" class="inline-block py-2.5 font-bold text-teal hover:text-primary underline underline-offset-4">לכל המאמרים</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <a href="blog-pricing.html" class="group flex flex-col rounded-3xl bg-white border-2 border-slate-200 hover:border-teal p-7 transition-colors"><span class="self-start rounded-full bg-primary text-white text-[.9rem] font-bold px-3 py-1">תמחור</span><h3 class="display text-2xl text-primary mt-5 leading-snug">למה קבלנים מפסידים כסף — ואיך תמחור נכון משנה את התמונה</h3><span class="mt-auto pt-6 font-bold text-teal">לקריאת המאמר</span></a>
+      <a href="blog-milestone-payments.html" class="group flex flex-col rounded-3xl bg-white border-2 border-slate-200 hover:border-teal p-7 transition-colors"><span class="self-start rounded-full bg-primary text-white text-[.9rem] font-bold px-3 py-1">גבייה</span><h3 class="display text-2xl text-primary mt-5 leading-snug">גבייה לפי אבני דרך — למה כל קבלן צריך את זה</h3><span class="mt-auto pt-6 font-bold text-teal">לקריאת המאמר</span></a>
+      <a href="blog-contractor-quote.html" class="group flex flex-col rounded-3xl bg-white border-2 border-slate-200 hover:border-teal p-7 transition-colors"><span class="self-start rounded-full bg-primary text-white text-[.9rem] font-bold px-3 py-1">הצעות מחיר</span><h3 class="display text-2xl text-primary mt-5 leading-snug">הצעת מחיר שמוכרת: מדריך לבעלי מקצוע בבנייה</h3><span class="mt-auto pt-6 font-bold text-teal">לקריאת המאמר</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. סיום + קביעת שיחה ============ -->
+<section id="contact" class="bg-primary text-white py-20 md:py-28 px-5 md:px-10">
+  <div class="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div>
+      <h2 class="t-h2">אתה בונה לאחרים. בוא נבנה את הדרך שבה העסק שלך עובד.</h2>
+      <div class="mt-8"><a href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn-main text-lg "><span class="romi-live">ספר לרומי על העסק שלך</span><span class="romi-soon">ספר לנו על העסק שלך בוואטסאפ</span><span class="sr-only"> (נפתח בוואטסאפ)</span></a></div>
+    </div>
+      <div class="bg-white text-ink p-7 md:p-9 rounded-3xl">
+        <h3 class="display text-2xl text-primary">קביעת שיחה</h3>
+        <div id="form-success" class="hidden py-8" role="status">
+          <p class="text-xl font-bold text-primary">תודה, הפרטים התקבלו.</p>
+          <p class="text-muted mt-2">נחזור אליך בהקדם לתיאום שיחה.</p>
+        </div>
+        <form id="contact-form" class="space-y-4 mt-5">
+          <div>
+            <label for="f-name" class="block font-bold text-muted">שם מלא</label>
+            <input id="f-name" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-primary focus:ring-0" type="text" name="name" autocomplete="name" required/>
+          </div>
+          <div>
+            <label for="f-phone" class="block font-bold text-muted">טלפון</label>
+            <input id="f-phone" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-primary focus:ring-0" type="tel" name="phone" autocomplete="tel" required/>
+          </div>
+          <button id="submit-btn" type="submit" class="btn-line text-primary w-full">קביעת שיחה</button>
+          <p id="form-error" class="hidden text-red-600" role="alert">הפרטים לא נשלחו. נסה שוב, או התקשר ל-054-4407557.</p>
+        </form>
+      </div>
+  </div>
+</section>
+<script>
+  // שליחת הטופס — אותו שירות (Formspree) כמו באתר הקיים
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'שולח...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xqewovkb', { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' } });
+      if (!res.ok) throw new Error();
+      this.classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    } catch {
+      document.getElementById('form-error').classList.remove('hidden');
+      btn.textContent = 'קביעת שיחה';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</main>
+
+<!-- פוטר -->
+<footer class="bg-deep text-white/75 pt-12 pb-8 px-5 md:px-10">
+  <div class="max-w-[1200px] mx-auto">
+    <!-- כל דרכי הקשר בשורה אחת -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <img src="logo-white.png" alt="טליה אושר" class="h-14 w-auto"/>
+      <ul class="flex flex-wrap justify-center gap-3" aria-label="דרכי קשר">
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="https://wa.me/972544407557?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A1%D7%A4%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-chat"/></svg>וואטסאפ</a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="tel:0544407557"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-phone"/></svg><span dir="ltr">054-4407557</span></a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="mailto:Talya@talyaosher.com"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-mail"/></svg>Talya@talyaosher.com</a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="https://www.linkedin.com/in/talya-osher" target="_blank" rel="noopener noreferrer"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-linkedin"/></svg>לינקדאין</a></li>
+        <li><a class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 font-medium" href="https://www.instagram.com/talya_osher_a/" target="_blank" rel="noopener noreferrer"><svg class="ic !w-5 !h-5" aria-hidden="true"><use href="#i-instagram"/></svg>אינסטגרם</a></li>
+      </ul>
+    </div>
+
+
+    <!-- שורה משפטית קטנה -->
+    <div class="flex flex-wrap justify-center md:justify-between gap-x-5 gap-y-1 mt-6 text-[.85rem] text-white/70">
+      <div class="flex flex-wrap gap-x-5 gap-y-1">
+        <a class="hover:text-sun py-1" href="accessibility.html">הצהרת נגישות</a>
+        <a class="hover:text-sun py-1" href="#">תנאי שימוש</a>
+        <a class="hover:text-sun py-1" href="#">מדיניות פרטיות</a>
+      </div>
+      <p class="py-1">© 2026 טליה אושר. כל הזכויות שמורות.</p>
+    </div>
+  </div>
 </footer>
+
+<!-- תפריט נגישות -->
+<div class="fixed bottom-4 left-4 z-[90]">
+  <button type="button" id="a11y-btn" class="w-14 h-14 rounded-full bg-[#1d4ed8] text-white grid place-items-center shadow-lg" aria-expanded="false" aria-controls="a11y-panel" aria-label="תפריט נגישות">
+    <svg class="ic !w-7 !h-7" aria-hidden="true"><use href="#i-a11y"/></svg>
+  </button>
+  <div id="a11y-panel" class="hidden absolute bottom-16 left-0 w-72 max-w-[calc(100vw-2rem)] bg-white text-ink rounded-2xl shadow-2xl border border-slate-200 p-4" role="group" aria-label="הגדרות נגישות">
+    <p class="font-bold text-lg text-primary mb-2">נגישות</p>
+    <div class="grid gap-2">
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-big" aria-pressed="false">הגדלת טקסט</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-contrast" aria-pressed="false">ניגודיות גבוהה</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-links" aria-pressed="false">הדגשת קישורים</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-font" aria-pressed="false">גופן קריא</button>
+      <button type="button" class="a11y-opt text-right rounded-xl border border-slate-300 px-4 py-3 font-medium" data-cls="a11y-still" aria-pressed="false">עצירת אנימציות</button>
+      <button type="button" id="a11y-reset" class="text-right rounded-xl bg-slate-100 px-4 py-3 font-medium">איפוס</button>
+      <a href="accessibility.html" class="text-teal font-bold underline px-1 py-2">הצהרת נגישות</a>
+    </div>
+  </div>
+</div>
+<script>
+  // תפריט לטלפון
+  (function () {
+    const btn = document.getElementById('menu-btn'), menu = document.getElementById('mobile-menu');
+    function close() { menu.classList.add('hidden'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'פתיחת תפריט'); }
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      if (open) { close(); return; }
+      menu.classList.remove('hidden'); btn.setAttribute('aria-expanded', 'true'); btn.setAttribute('aria-label', 'סגירת תפריט');
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  })();
+  // תפריט נגישות — הבחירה נשמרת בדפדפן של הגולש
+  (function () {
+    const root = document.documentElement, btn = document.getElementById('a11y-btn'), panel = document.getElementById('a11y-panel');
+    const KEY = 'a11y-prefs';
+    let saved = [];
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+    const opts = document.querySelectorAll('.a11y-opt');
+    function apply() {
+      opts.forEach(o => { const on = saved.includes(o.dataset.cls); root.classList.toggle(o.dataset.cls, on); o.setAttribute('aria-pressed', String(on)); o.style.background = on ? '#e6f2f3' : ''; });
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    }
+    opts.forEach(o => o.addEventListener('click', () => { const c = o.dataset.cls; saved = saved.includes(c) ? saved.filter(x => x !== c) : saved.concat(c); apply(); }));
+    document.getElementById('a11y-reset').addEventListener('click', () => { saved = []; apply(); });
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!open)); panel.classList.toggle('hidden', open); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.classList.contains('hidden')) { panel.classList.add('hidden'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); } });
+    apply();
+  })();
+</script>
 
 </body>
 </html>
